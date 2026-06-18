@@ -1,0 +1,13 @@
+node_modules/
+.env
+
+# Imágenes
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.svg
+*.webp
+*.ico
+*.bmp
+public/images/thumbnails/

@@ -1,0 +1,98 @@
+{
+  "generated": "2026-06-12T16:31:04.110Z",
+  "summary": {
+    "total": 681,
+    "downloaded": 10,
+    "already_existed": 30,
+    "rate_limited_skipped": 0,
+    "errors": 8,
+    "errors_404": 8,
+    "unprocessed": 633,
+    "pending_next_run": 633
+  },
+  "downloaded": [
+    {
+      "inv": "2025.1201",
+      "route": "/images/2025.1201.jpg"
+    },
+    {
+      "inv": "2025.1202",
+      "route": "/images/2025.1202.jpg"
+    },
+    {
+      "inv": "2025.1203",
+      "route": "/images/2025.1203.jpg"
+    },
+    {
+      "inv": "2025.1204",
+      "route": "/images/2025.1204.jpg"
+    },
+    {
+      "inv": "2025.1205",
+      "route": "/images/2025.1205.jpg"
+    },
+    {
+      "inv": "2025.1200",
+      "route": "/images/2025.1200.jpg"
+    },
+    {
+      "inv": "2025.1210",
+      "route": "/images/2025.1210.jpg"
+    },
+    {
+      "inv": "2025.1206",
+      "route": "/images/2025.1206.jpg"
+    },
+    {
+      "inv": "2025.1211",
+      "route": "/images/2025.1211.jpg"
+    },
+    {
+      "inv": "2025.1207",
+      "route": "/images/2025.1207.jpg"
+    }
+  ],
+  "rate_limited": [],
+  "errors": [
+    {
+      "inv": "2025.1189",
+      "error": "404",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1189-M%C3%A4nnertunika-(Unku).jpg"
+    },
+    {
+      "inv": "2025.1194",
+      "error": "404",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1194-Fragment-von-Schilfbox-umwickelt-mit-Garnen.jpg"
+    },
+    {
+      "inv": "2025.1190",
+      "error": "404",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1190-Netzgewebe.jpg"
+    },
+    {
+      "inv": "2025.1195",
+      "error": "404",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1195-Chumpi-(Sch%C3%A4rpe)-mit-Medaillons-und-Quasten.jpg"
+    },
+    {
+      "inv": "2025.1197",
+      "error": "404",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1197-Wirkerei-mit-Streifen-und-zoomorphischen-Figuren.jpg"
+    },
+    {
+      "inv": "2025.1196",
+      "error": "404",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1196-Gewebter-Gurt-mit-Z%C3%B6pfen.jpg"
+    },
+    {
+      "inv": "2025.1198",
+      "error": "404",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1198-Gewebe-mit-vier-menschlichen-Figuren.jpg"
+    },
+    {
+      "inv": "2025.1199",
+      "error": "404",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1199-Textil.jpg"
+    }
+  ]
+}

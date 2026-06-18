@@ -1,0 +1,4788 @@
+{
+  "generated": "2026-06-12T15:24:02.575Z",
+  "summary": {
+    "total": 681,
+    "valid": 0,
+    "invalid": 681,
+    "breakdown": {
+      "403": 0,
+      "404": 0,
+      "timeout": 0,
+      "other_http_error": 0,
+      "connection_error": 681
+    },
+    "with_special_char_issues": 0,
+    "elapsed_seconds": 2.2
+  },
+  "valid_urls": [],
+  "invalid_urls": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1171-Vier-zusammengen%C3%A4hte-Textilst%C3%BCcke.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1162-G%C3%BCrtel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1163-Bord%C3%BCre-G%C3%BCrtel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1164-G%C3%BCrtel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1165-G%C3%BCrtel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1166-Chumpi-%28Sch%C3%A4rpe%29-mit-Medaillons-und-Quasten.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1167-Textiler-Kopf-eines-Bestattungsb%C3%BCndels.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1168-G%C3%BCrtel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1172-Gewebe-mit-Tiermuster.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1169-G%C3%BCrtel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1170-Poncho.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1173-Sch%C3%A4rpe-G%C3%BCrtel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1174-Kopftuch-%28%3F%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1175-Gestreiftes-Gewebe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1181-Gewebe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1176-Wirkerei-mit-Vogelmuster.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1182-Bemaltes-Gewebe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1177-Gesticktes-Gewebefragment.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1183-Wirkerei-mit-Vogelmuster.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1178-Gewebe-mit-zwei-Figuren.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1184-Bemaltes-Gewebe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1179-Gewebe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1180-Gewebe-mit-Vogelmuster.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1185-Inka-Poncho.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1191-Proto-Nazca-%28%3F%29-Schmuckborte-mit-Mu%C3%B1ecas.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1186-Poncho-grosses-Tuch.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1187-Hemdornament.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1192-Nazca-%28%3F%29-Schmuckborte-mit-Figuren.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1193-Gesticktes-Gewebe-mit-Vogelmuster.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1188-Gurt-mit-Fransen-und-Quaste.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1189-M%C3%A4nnertunika-%28Unku%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1194-Fragment-von-Schilfbox-umwickelt-mit-Garnen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1190-Netzgewebe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1195-Chumpi-%28Sch%C3%A4rpe%29-mit-Medaillons-und-Quasten.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1201-Bemaltes-Gewebe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1197-Wirkerei-mit-Streifen-und-zoomorphischen-Figuren.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1196-Gewebter-Gurt-mit-Z%C3%B6pfen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1202-Gestreiftes-gewebtes-Textilobjekt.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1198-Gewebe-mit-vier-menschlichen-Figuren.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1203-Netzgewebe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1199-Textil.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1204-M%C3%A4nnertunika.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1205-Gestickte-Gewebe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1200-G%C3%BCrtel%3F.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1210-Schmuckborte.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1206-Chuquibamba-Zeremonielle-Tasche.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1211-Band-mit-gestrickten-K%C3%B6pfen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1207-Fragment-einer-Miniatur-M%C3%A4nnertunika-mit-Federn-%28%3F%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1219-Gewebefragment-mit-Bord%C3%BCre.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1208-Wirkerei-mit-Fransen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1209.1-Gewebe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1220-Gewebefragment-mit-Bord%C3%BCre.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1209.2-Gewebe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1221-Doppelgewebe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1227-Wirkerei-mit-Fransen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1222-Gewebefragment.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1223-Wirkereifragment.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1228-Gewirkter-Poncho-%28Unku%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1224-Gesticktes-Gewebe-mit-Tiermuster.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1229-Zweigewebe-mit-zwei-spiegelbildlichen-Tierfiguren.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1230-Gewebe-mit-der-Tierfiguren.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1225-Wirkereifragment.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1231-Koka-Tasche.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1226-Wirkerei-mit-schussgemusterten-Eins%C3%A4tzen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1276-Fledermaus-Pektorale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1232-Wirkerei-mit-Figuren.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1233-Wirkerei-mit-V%C3%B6geln.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1277-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1278-Obsidian-Objekt.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1234-Wirkerei-mit-Figuren.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1235-Wirkerei-mit-Fransen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1279-Obsidian-Objekt.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1280-Objekt.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1273-Ohrpflock-%28%3F%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1281-Ohrschmuck.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1286-Ohrschmuck.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1282-Ohrschmuck.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1287-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1283-Ohrschmuck.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1288-Tierfigur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1289-Vogelfigur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1284-Ohrschmuck.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1290-Figur-mit-zwei-Gesichtern.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1285-Ohrschmuck.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1296-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1291-Vogelfigur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1297-Schmuck.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1292-Zahlreiche-Anh%C3%A4nger-zusammengebunden.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1293-Puppe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1294-Puppe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1295-F%C3%A4cher.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1298-Schmuck.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1299-Messerspitze.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1300-Anh%C3%A4nger-Gesicht.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1301-Anh%C3%A4nger-Gesicht.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1306-Rechteckiges-Objekt-mit-Einlagen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1308-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1302-Scheibe-mit-Einlagen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1307-L%C3%A4ngliches-Objekt-mit-Einlagen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1303-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1402-Wirkereifragment.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1304-Muschelarmband.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.1305-Armband.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.267-Axt.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.268-Axt.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.273-Kleine-Axt.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.274-Stein.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.269-Axt.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.275-Stein.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.270-Steinaxt.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.271-Polierstein.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.276-Stein.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.277-Kopf-einer-Raubkatze.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.272-Axt.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.278-Fledermausfl%C3%BCgel-Pektorale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.283-Steinkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.279-Fledermausfl%C3%BCgel-Pektorale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.284-Steinkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.285-Steinkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.280-Stein.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.286-Steinkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.281-Mahlstein.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.287-Steintierkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.282-Metate-in-Raubkatzenform.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.293-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.288-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.294-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.289-Fig%C3%BCrchen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.295-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.290-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.291-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.296-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.292-Fig%C3%BCrchen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.297-Sitzendes-Fig%C3%BCrchen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.303-Fig%C3%BCrchen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.298-Steinkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.304-Gesichtsplatte.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.299-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.305-Maiskolben-%28Conopa%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.300-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.301-Muschelhorn.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.306-Figur-mit-Maiskolben-%28Conopa%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.302-Sitzendes-Fig%C3%BCrchen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.307-Figur-mit-Maiskolben-%28Conopa%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.313-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.308-Maiskolben-%28Conopa%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.309-Figur%2C.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.314-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.315-Mezcala-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.310-K%C3%B6pfchen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.316-Sitzende-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.311-Axt-Figur-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.317-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.312-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.318-Stehende-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.323-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.324-R%C3%B6hrenf%C3%B6rmige-Perle-mit-eingeschnittenem-Totenkopfdekor..jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.319-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.325-R%C3%B6hrenf%C3%B6rmige-Perle-mit-eingeschnittenem-Dekor..jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.320-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.326-Kleiner-Becher.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.321-Steinkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.327-Katzenf%C3%B6rmiges-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.322-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.333-Hacha-im-Form-eines-menschlichen-Kopfes.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.328-Steingesichtsmaske.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.329-Keulenkopf-Vogelform.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.334-Vogelsteinkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.335-Steinperlenkette.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.330-Keule-in-Form-eines-Vogelkopfes.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.331-Keulenkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.336-Holzbecher-mit-Griff.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.332-Keulenkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.337-Kero.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.343-Schale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.338-Kero.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.344-Schale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.339-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.345-Schale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.340-Dreibein-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.341-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.346-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.347-Schale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.342-Schale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.352.2-Urne.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.348-Schale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.349-Schale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.353.1-Deckel-einer-Graburne.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.353.2-Urne.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.350-Schale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.351-Gef%C3%A4ss-in-Jaguar-Form.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.354-Schale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.352.1-Deckel-der-Graburne.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.355-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.361-Gef%C3%A4ss-mit-Kopf-und-Griff.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.356-Schale-%28zwei-Fragmente%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.357-Schale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.362-Steigb%C3%BCgelgef%C3%A4ss-in-Form-einer-Figur-mit-Felidenz%C3%A4hnen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.363-Tiermaske.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.358-Schale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.364-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.359-Gef%C3%A4ss-in-Tierform.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.365-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.360-Gef%C3%A4ss-in-Tierkopfform.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.366-Weibliche-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.371-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.367-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.372-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.373-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.368-Opferdarstellung-Figur-auf-Ger%C3%BCst.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.369-Schwangere-Frau.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.374-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.375-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.370-Ocarina.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.376-Figur-mit-Tier.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.381-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.377-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.382-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.383-Chupicuaro-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.378-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.379-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.384-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.385-Jaguar.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.380-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.386-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.391-Stein-Barstklopfer.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.387-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.392-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.393-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.388-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.394-Sitzende-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.389-Stein-mit-Gesicht.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.395-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.390-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.401-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.396-Sitzende-%C3%A4ltere-weibliche-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.397-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.402-Tierkopf-%28Fragment%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.403-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.398-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.399-Gesicht.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.404-Figur-mit-Kind.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.405-Kokabl%C3%A4tter-kauend-%28coquero%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.400-Sitzende-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.406-Sitzende-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.407-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.408-Kokabl%C3%A4tter-kauend.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.411-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.412-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.413-Gef%C3%A4ss-mit-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.414-Sitzende-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.409-Sitzende-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.415-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.410-Sitzende-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.416-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.417-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.418-Behang-Glocken.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.426-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.427-Gef%C3%A4ss-mit-Tier.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.428-Kleine-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.429-Ocarina.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.431-Ocarina-in-Tierform.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.421-Hausfigur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.422-Hausfigur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.419-Tierfigur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.430-Ocarina-in-Vogelform.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.423-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.432-Gef%C3%A4ss-in-Form-eines-sitzenden-Menschen..jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.424-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.433-Steigb%C3%BCgelgef%C3%A4ss-mit-Jaguar.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.420-Ocarina.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.425-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.434-Gef%C3%A4ss-in-Form-von-zwei-Tiere.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.441-Gef%C3%A4ss-mit-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.435-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.436-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.442-Gef%C3%A4ss-mit-Szene.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.437-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.443-Vase.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.438-Vase.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.444-Dreifussgef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.439-Doppelkammer-Pfeifgef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.440-Gef%C3%A4ss-mit-Fischer-in-einem-Schilfboot.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.451-Gef%C3%A4ss-mit-Katze.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.445-Dreifussgef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.446-Gef%C3%A4ss-mit-menschlichem-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.452-Gef%C3%A4ss-mit-Doppelspender.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.447-Urnendeckel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.453-Doppelkammer-Pfeifgef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.448-Gef%C3%A4ss-in-der-Form-eines-G%C3%BCrteltieres.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.449-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.454-Doppel-Ausguss--und-Br%C3%BCckenflasche-mit-Vogel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.450-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.455-Beh%C3%A4lter-mit-tierf%C3%B6rmigem-Spender.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.461-Schale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.456-Beh%C3%A4lter.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.457-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.462-Flasche-mit-Br%C3%BCcke-und-Ausgiesser-in-Vogelgestalt.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.458-Dreifussgef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.463-Vogelf%C3%B6rmiges-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.459-Gef%C3%A4ss-mit-Schlangenmotiv.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.464-Gef%C3%A4ss-in-Menschenform.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.460-Schale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.465-Gef%C3%A4ss-in-Menschenform.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.473-Tlaloc-Maske.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.466-Pfeifgef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.467-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.474-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.475-Ocarina.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.470-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.476-Sitzendes-Fig%C3%BCrchen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.472-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.471-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.477-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.483-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.478-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.479-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.484-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.480-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.485-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.486-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.481-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.487-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.482-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.493-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.488-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.489-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.490-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.491-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.492-Tlatilco-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.494-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.495-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.496-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.497-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.498-Chupicuaro-Figur-%28%3F%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.499-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.503-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.500-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.501-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.502-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.509-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.513-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.510-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.511-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.514-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.512-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.515-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.516-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.504-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.505-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.517-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.506-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.518-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.519-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.507-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.523-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.524-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.508-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.520-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.521-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.525-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.522-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.526-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.527-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.528-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.533-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.534-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.529-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.530-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.535-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.536-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.531-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.532-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.537-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.538-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.543-Figur-mit-zwei-Tieren.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.539-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.544-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.545-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.540-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.541-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.546-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.542-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.547-Sitzende-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.553-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.549-Chupicuaro-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.548-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.554-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.555-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.550-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.551-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.556-Sitzende-Figur-mit-Kind.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.557-Sitzende-Figur-mit-Kind.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.552-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.563-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.558-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.559-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.564-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.560-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.565-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.561-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.566-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.567-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.562-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.568-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.573-Weibliche-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.569-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.574-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.570-Paar.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.575-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.571-Liegende-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.576-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.572-Liegende-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.577-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.583-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.578-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.579-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.584-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.585-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.580-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.581-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.586-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.587-Kopf-Fragment.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.582-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.593-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.588-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.589-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.594-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.595-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.590-Formgefertigte-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.591-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.596-Kopf-%28Gott-%3F%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.592-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.597-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.598-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.603-Dreibeinschale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.599-Tierkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.604-Dreibeinschale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.605-Schale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.600-Tierkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.601-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.606-Gef%C3%A4ss-in-Menschenform.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.607-Dreibeiniges-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.613-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.602-Dreibeinschale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.614-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.608-Gef%C3%A4ss-in-Tierform.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.616-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.610-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.609-Anh%C3%A4nger-%28%3F%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.615-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.611-Pfeife-%28Ocarina%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.618-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.612-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.617-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.623-Rollstempel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.624-Rollstempel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.619-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.625-Siegel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.620-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.626-Siegel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.627-Siegel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.621-Rollstempel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.622-Rollstempel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.628-Siegel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.633-Stempel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.629-Vogel-Stempel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.634-Stempel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.630-Laufender-Affe-Stempel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.635-Stempel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.636-Negativform-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.631-Tintenfisch-%28%3F%29-Stempel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.632-Stempel%2C.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.637-Negativform-Fledermaus.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.638-Negativform-Kopfschmuck.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.643-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.639-Negativform-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.640-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.644-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.645-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.641-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.646-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.647-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.642-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.648-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.653-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.649-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.654-Fussf%C3%B6rmiges-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.650-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.655-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.656-Gef%C3%A4ss.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.651-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.652-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.657-Gef%C3%A4ss-in-Kopfform.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.658-Halskette.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.659-Goldmanschette.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.660-Goldmanschette.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.661-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.663-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.664-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.665-Maske.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.666-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.667-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.662-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.668-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.669-Weibliche-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.670-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.671-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.681-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.678-Tierkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.679-Tierkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.683-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.680-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.684-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.673-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.682-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.674-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.685-Tierkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.675-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.686-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.672-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.687-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.676-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.677-Tierkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.688-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.693-Tierfigur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.689-Jaguar-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.694-Tierfigur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.690-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.695-Tierfigur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.691-Reptil-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.696-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.697-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.692-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.698-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.703-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.699-Sitzende-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.704-Okarina.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.700-Sitzende-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.705-Tonreibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.701-Tierfigur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.706-Tonreibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.707-Tonreibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.702-Sitzende-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.713-Ring.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.708-Figur-Frosch.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.709-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.714-Ring.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.715-Ring.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.710-Hand.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.711-Ring.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.716-Ring.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.717-Ring.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.712-Ring.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.723-Siegel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.718-Ring.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.719-Ring.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.724-Siegel-Vogel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.725-Vogel-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.726-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.720-Ring.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.727-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.721-Ohrpflock.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.722-Ohrschmuck-%28Teil%29-in-L-Form.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.728-Kopf-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.730-Ohrring.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.734-Teil-eines-Ohrpflocks.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.735-Ohrpflock-%28%3F%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.731-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.736-Kniende-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.732-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.737-Vogel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.733-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.738-Vogel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.739-Vogel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.744-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.745-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.740-Vogel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.741-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.746-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.742-Frosch.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.747-Frosch.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.748-Halskette-bestehend-von-7-Figuren.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.743-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.754-Nadel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.749-Nadel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.755-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.750-Nadel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.751-Nadel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.756-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.752-Nadel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.757-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.753-Nadel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.758-Stein.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.763-Stein.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.859-Tierkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.764-Stein.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.759-Stein.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.765-Stein.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.760-Stein.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.766-Stein.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.761-Stein.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.860-Vergoldetes-Medaillon.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.762-Stein.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.857-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.858-Vogelfigur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.864-Vergoldetes-Medaillon.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.865-Vergoldetes-Medaillon.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.866-Tierplakette-aus-Kupfer.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.861-Vergoldetes-Medaillon.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.867-Tierplakette-aus-Kupfer.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.868-Tierplakette-aus-Kupfer.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.862-Vergoldetes-Medaillon.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.863-Vergoldetes-Medaillon.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.869-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.870-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.875-Eulenkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.872-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.876-Medaillon-mit-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.877-Kopf-mit-Ohrschmuck-Kupfer.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.878-Rassel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.873-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.879-Tumi-%28%3F%29-Stangengriffmesser-mit-Krokodilen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.874-Kopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.880-Stangengriffmesser-mit-Affen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.881-Stangengriffmesser-Krokodil-%28%3F%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.885-Figuralverziertes-Messer-mit-schmaler-Klinge.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.882-Stangengriffmesser-mit-Person-und-Tier.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.886-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.887-Anh%C3%A4nger-Vogelk%C3%B6pfe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.883-Stangengriffmesser-mit-sitzender-Figur.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.888-Silberpinzette.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.884-Stabaufsatz-Figur-sitzend.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.889-Silberpinzette.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.890-Schelle.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.895-Pektorale-mit-Gesicht.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.891-Kegelf%C3%B6rmiges-Objekt.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.896-%28Brust%3F%29Schmuck.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.892-Axt.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.897-Vogel-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.898-Messer%3F.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.893-Beil-Messer.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.899-Ohrpflock-Scheibe-mit-Decapitator-Relief.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.894-Eulenkopf.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.900-Ohrpflock-Scheibe-mit-Decapitator-Relief.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.905-Scheibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.901-Scheibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.906-Scheibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.902-Scheibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.907-Scheibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.908-Scheibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.903-Scheibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.909-Scheibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.904-Scheibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.915-Platte.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.910-Scheibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.911-Scheibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.916-Platte.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.917-Stabaufsatz.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.912-Scheibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.918-Nadel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.913-Scheibe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.919-Gl%C3%B6ckchen%3F.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.914-Platte.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.920-Rassel-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.921-Rassel-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.922-Rassel-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.923-Rassel-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.925-Schale.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.926-Mundschmuck.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.927-Mundschmuck.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.928-Wirkerei.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.929-Chuspa-%28Tasche%29.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.924-Rassel-Anh%C3%A4nger.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.930-Zwei-Fragmente-einer-Bord%C3%BCre-mit-Katzenmuster-und-Fransen.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.931-Stoffbeutel.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.932-Mumienmaske.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.933-Mumienmaske.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.935-Wirkerei-mit-Vogelpaar-Motiven.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.936-Gurt.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Museum-Rietberg-Z%C3%BCrich-Inv.Nr.-2025.934-Chancay-Puppe.jpg",
+      "status": "ERROR",
+      "error": "fetch failed",
+      "issues": [],
+      "fixedUrl": null
+    }
+  ],
+  "special_char_urls": []
+}
