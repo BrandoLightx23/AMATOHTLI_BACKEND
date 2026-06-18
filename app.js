@@ -1,9 +1,10 @@
 const express = require('express');
-const morgan  = require('morgan');
-const cors    = require('cors');
-const path    = require('path');
-const app     = express();
-const port    = 3000;
+const morgan = require('morgan');
+const cors = require('cors');
+const path = require('path');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 
@@ -12,11 +13,9 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 // ── Servir imágenes locales ─────────────────────────────────────────────────
-// Las imágenes descargadas en public/images/ se sirven directamente.
-// Nunca se contacta a Wikimedia durante la navegación.
 app.use('/images', express.static(path.join(__dirname, 'public', 'images'), {
-  maxAge: '7d',          // caché del navegador 7 días
-  immutable: true,       // los archivos no cambian, caché agresivo
+  maxAge: '7d',
+  immutable: true,
   etag: true,
   lastModified: true,
 }));
@@ -25,7 +24,7 @@ app.use('/images', express.static(path.join(__dirname, 'public', 'images'), {
 app.use('/api', require('./routes/api'));
 
 // Iniciar servidor
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
-  console.log(`Imágenes locales:   http://localhost:${port}/images/`);
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en puerto ${PORT}`);
+  console.log(`Imágenes locales: http://localhost:${PORT}/images/`);
 });
