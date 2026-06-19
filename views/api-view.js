@@ -6,7 +6,7 @@ const db = require('../config/db');
 // Caché en memoria: url_raw → { resolvedUrl, ts }
 // Evita repetir peticiones fallidas o exitosas recientes.
 const IMAGE_CACHE = new Map();
-const CACHE_TTL_OK  = 24 * 60 * 60 * 1000; // 24h para URLs exitosas
+const CACHE_TTL_OK = 24 * 60 * 60 * 1000; // 24h para URLs exitosas
 const CACHE_TTL_ERR = 10 * 60 * 1000;       // 10min para URLs que fallaron
 
 /**
@@ -141,7 +141,7 @@ function mapRowToObject(f) {
     region: f.lugar_origen ? `${f.lugar_origen}, ${country}` : country,
     descripcion: `Cultura: ${f.estilo_cultura || 'Desconocida'}. Material/Técnica: ${f.material_tecnica || 'N/A'}. Dimensiones: ${f.dimensiones || 'N/A'}. Inventario: ${f.numero_inventario || 'N/A'}. Autor: ${f.autor || 'Desconocido'}`,
     coordinates: getCoordinatesForRegion(f.lugar_origen, f.estilo_cultura),
-    
+
     // Metadatos individuales unificados
     autor: f.autor || 'Desconocido',
     lugar_origen: f.lugar_origen || '',
@@ -171,10 +171,10 @@ exports.obtenerTodos = async (req, res) => {
 
     const archivos = filas.map(mapRowToObject);
 
-    res.json({ 
-      categoria: "Anne-Marie und Caspar Reinhart Collection at Museum Rietberg, Zürich", 
-      total: archivos.length, 
-      archivos 
+    res.json({
+      categoria: "Anne-Marie und Caspar Reinhart Collection at Museum Rietberg, Zürich",
+      total: archivos.length,
+      archivos
     });
   } catch (e) {
     console.error(e);
@@ -193,10 +193,10 @@ exports.obtenerPorAnio = async (req, res) => {
     const sigloFin = year + 99;
 
     const query = `
-      SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha, 
-             tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
-             otras_denominaciones, imagen_url, imagen_local, thumbnail_local
-      FROM objetos
+  SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha,
+         tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos,
+         otras_denominaciones, imagen_url
+  FROM objetos
     `;
     const [filas] = await db.query(query);
 
@@ -278,16 +278,21 @@ exports.wiki = async (req, res) => {
     const title = req.params.title;
     if (!title) return res.status(400).json({ message: 'Se requiere identificador/inventario' });
 
-    const query = `SELECT imagen_url, imagen_local, thumbnail_local FROM objetos WHERE numero_inventario = ? OR titulo = ? LIMIT 1`;
+    const query = `
+SELECT imagen_url
+FROM objetos
+WHERE numero_inventario = ? OR titulo = ?
+LIMIT 1
+`;
     const [filas] = await db.query(query, [title, title]);
 
     if (filas.length > 0) {
       const f = filas[0];
       return res.json({
         url: f.imagen_url,
-        image: f.imagen_local || f.imagen_url,  // Prefiere ruta local
-        localImage: f.imagen_local || null,
-        thumbnail: f.thumbnail_local || null,
+        image: f.imagen_url,
+        localImage: null,
+        thumbnail: null,
       });
     }
 
@@ -475,7 +480,7 @@ exports.regions = async (req, res) => {
     const query = `SELECT DISTINCT lugar_origen FROM objetos WHERE lugar_origen IS NOT NULL AND lugar_origen != 'NULL'`;
     const [filas] = await db.query(query);
     const listaRegiones = filas.map(f => f.lugar_origen);
-    
+
     res.json({ regions: listaRegiones });
   } catch (e) {
     console.error(e);
