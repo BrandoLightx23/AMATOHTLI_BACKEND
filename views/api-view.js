@@ -133,9 +133,9 @@ function mapRowToObject(f) {
     id: f.id,
     titulo: f.titulo || 'Sin título',
     wikiTitle: f.numero_inventario || '',
-    url: f.imagen_url,                  // URL Wikimedia original (respaldo)
-    localImage: f.imagen_local || null, // Ruta local: /images/2025.385.jpg
-    thumbnail: f.thumbnail_local || null, // Thumbnail: /images/thumbnails/2025.385.jpg
+    url: f.imagen_url,
+    localImage: null,
+    thumbnail: null,
     year: parsedYear,
     yearRaw: f.fecha,
     region: f.lugar_origen ? `${f.lugar_origen}, ${country}` : country,
@@ -162,10 +162,11 @@ function mapRowToObject(f) {
 exports.obtenerTodos = async (req, res) => {
   try {
     const query = `
-      SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha, 
-             tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
-             otras_denominaciones, imagen_url, imagen_local, thumbnail_local
-      FROM objetos
+  SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha,
+         tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos,
+         otras_denominaciones, imagen_url
+  FROM objetos
+
     `;
     const [filas] = await db.query(query);
 
@@ -220,11 +221,11 @@ exports.obtenerPorAnio = async (req, res) => {
 exports.obtenerDesconocidos = async (req, res) => {
   try {
     const query = `
-      SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha, 
-             tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
-             otras_denominaciones, imagen_url, imagen_local, thumbnail_local
-      FROM objetos
-    `;
+  SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha,
+         tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos,
+         otras_denominaciones, imagen_url
+  FROM objetos
+`;
     const [filas] = await db.query(query);
 
     const filtrados = filas.filter(f => {
@@ -251,7 +252,7 @@ exports.buscar = async (req, res) => {
     const query = `
       SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha, 
              tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
-             otras_denominaciones, imagen_url, imagen_local, thumbnail_local
+             otras_denominaciones, imagen_url
       FROM objetos
       WHERE LOWER(IFNULL(titulo, '')) LIKE LOWER(?) 
          OR LOWER(IFNULL(lugar_origen, '')) LIKE LOWER(?) 
