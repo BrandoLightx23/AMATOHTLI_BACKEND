@@ -1,0 +1,28 @@
+{
+  "generated": "2026-06-12T15:27:00.374Z",
+  "note": "Análisis estático (sin peticiones HTTP). Las URLs son de Wikimedia Commons.",
+  "summary": {
+    "total": 681,
+    "wikimedia": 681,
+    "other_domain": 0,
+    "duplicates": 0,
+    "avg_url_length": 114,
+    "issues": {
+      "unencoded_spaces": 0,
+      "double_encoding": 0,
+      "invalid_chars": 0,
+      "raw_unicode": 0,
+      "parentheses_in_path": 0,
+      "too_short": 0
+    },
+    "by_extension": {
+      "jpg": 681
+    },
+    "by_domain": {
+      "upload.wikimedia.org": 681
+    }
+  },
+  "double_encoded_urls": [],
+  "raw_unicode_urls": [],
+  "spaced_urls": []
+}
