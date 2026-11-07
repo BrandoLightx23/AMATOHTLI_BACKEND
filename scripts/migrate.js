@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 /**
  * scripts/migrate.js
- * Ejecuta la migración SQL directamente usando la conexión mysql2 del proyecto.
- * Compatible con XAMPP (no requiere el cliente mysql en el PATH).
+ * Ejecuta la migración SQL directamente usando la conexión PostgreSQL del proyecto.
  *
  * Uso:
  *   node scripts/migrate.js
@@ -20,18 +19,14 @@ async function migrate() {
       name: 'Añadir columna imagen_local',
       sql: `
         ALTER TABLE objetos
-        ADD COLUMN imagen_local VARCHAR(255) DEFAULT NULL
-          COMMENT 'Ruta local servida por Express: /images/2025.385.jpg'
-        AFTER imagen_url
+        ADD COLUMN IF NOT EXISTS imagen_local VARCHAR(255) DEFAULT NULL
       `,
     },
     {
       name: 'Añadir columna thumbnail_local',
       sql: `
         ALTER TABLE objetos
-        ADD COLUMN thumbnail_local VARCHAR(255) DEFAULT NULL
-          COMMENT 'Ruta local del thumbnail 300px: /images/thumbnails/2025.385.jpg'
-        AFTER imagen_local
+        ADD COLUMN IF NOT EXISTS thumbnail_local VARCHAR(255) DEFAULT NULL
       `,
     },
   ];
@@ -41,37 +36,32 @@ async function migrate() {
       await db.query(step.sql);
       console.log(`  ✅ ${step.name}`);
     } catch (err) {
-      // Error 1060 = Duplicate column name → columna ya existe, OK
-      if (err.errno === 1060) {
-        console.log(`  ♻️  ${step.name} (ya existía, se omite)`);
-      } else {
-        console.error(`  ❌ ${step.name}: ${err.message}`);
-        throw err;
-      }
+      console.error(`  ❌ ${step.name}: ${err.message}`);
+      throw err;
     }
   }
 
   // Verificar resultado
-  const [cols] = await db.query(`
-    SELECT COLUMN_NAME, COLUMN_TYPE, IS_NULLABLE, COLUMN_COMMENT
-    FROM INFORMATION_SCHEMA.COLUMNS
-    WHERE TABLE_SCHEMA = 'museo_rietberg'
-      AND TABLE_NAME   = 'objetos'
-      AND COLUMN_NAME IN ('imagen_url', 'imagen_local', 'thumbnail_local')
-    ORDER BY ORDINAL_POSITION
+  const { rows: cols } = await db.query(`
+    SELECT column_name, data_type, is_nullable
+    FROM information_schema.columns
+    WHERE table_schema = current_schema()
+      AND table_name = 'objetos'
+      AND column_name IN ('imagen_url', 'imagen_local', 'thumbnail_local')
+    ORDER BY ordinal_position
   `);
 
   console.log('\n📋 Columnas de imagen en la tabla objetos:\n');
   cols.forEach(c => {
-    console.log(`  ${c.COLUMN_NAME.padEnd(20)} ${c.COLUMN_TYPE.padEnd(15)} nullable=${c.IS_NULLABLE}`);
+    console.log(`  ${c.column_name.padEnd(20)} ${c.data_type.padEnd(15)} nullable=${c.is_nullable}`);
   });
 
   // Contar objetos con/sin imagen_local
-  const [[counts]] = await db.query(`
+  const { rows: [counts] } = await db.query(`
     SELECT
-      COUNT(*)                                    AS total,
-      SUM(imagen_local IS NOT NULL)               AS con_local,
-      SUM(imagen_local IS NULL)                   AS sin_local
+      COUNT(*) AS total,
+      COUNT(imagen_local) AS con_local,
+      COUNT(*) - COUNT(imagen_local) AS sin_local
     FROM objetos
   `);
 

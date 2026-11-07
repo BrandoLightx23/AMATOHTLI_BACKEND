@@ -9,7 +9,7 @@
  *   1. Lee todas las imágenes de esa carpeta.
  *   2. Extrae el número de inventario de cada nombre de archivo (ej. "Inv_2025.1162-Gürtel.jpg" -> "2025.1162").
  *      Utiliza la regla: todo lo que esté entre "Inv_" y el primer guión "-".
- *   3. Consulta la base de datos MySQL y asocia cada imagen con su fila correspondiente usando "numero_inventario".
+ *   3. Consulta la base de datos PostgreSQL y asocia cada imagen con su fila correspondiente usando "numero_inventario".
  *   4. Mueve y renombra la imagen a la carpeta principal "public/images/[numero_inventario].jpg".
  *   5. Usa Sharp para optimizar la imagen y generar un thumbnail de 300px en "public/images/thumbnails/[numero_inventario].jpg".
  *   6. Actualiza la base de datos con las rutas locales:
@@ -78,7 +78,7 @@ async function main() {
   console.log(`🎯 Mapeadas correctamente de nombre a inventario: ${fileMap.size} imágenes.`);
 
   // 4. Obtener todos los objetos del Museo en la base de datos
-  const [objetos] = await db.query(
+  const { rows: objetos } = await db.query(
     'SELECT id, numero_inventario, imagen_url, imagen_local FROM objetos'
   );
   console.log(`📊 Objetos registrados en base de datos: ${objetos.length}`);
@@ -115,7 +115,7 @@ async function main() {
       if (fs.existsSync(targetLocalPath) && fs.existsSync(targetThumbPath)) {
         if (obj.imagen_local !== localRoute) {
           await db.query(
-            'UPDATE objetos SET imagen_local = ?, thumbnail_local = ? WHERE id = ?',
+            'UPDATE objetos SET imagen_local = $1, thumbnail_local = $2 WHERE id = $3',
             [localRoute, thumbRoute, obj.id]
           );
         }
@@ -137,7 +137,7 @@ async function main() {
 
       // Actualizar Base de Datos
       await db.query(
-        'UPDATE objetos SET imagen_local = ?, thumbnail_local = ? WHERE id = ?',
+        'UPDATE objetos SET imagen_local = $1, thumbnail_local = $2 WHERE id = $3',
         [localRoute, thumbRoute, obj.id]
       );
 

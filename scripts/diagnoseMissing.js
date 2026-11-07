@@ -29,7 +29,7 @@ async function main() {
   console.log(`📁 Archivos pendientes en imagenes_reinhart: ${files.length}`);
 
   // 2. Obtener objetos de la base de datos sin imagen_local
-  const [objetos] = await db.query(
+  const { rows: objetos } = await db.query(
     'SELECT id, numero_inventario, imagen_url FROM objetos WHERE imagen_local IS NULL'
   );
   console.log(`📊 Objetos en BD sin imagen_local: ${objetos.length}`);
@@ -72,7 +72,7 @@ async function main() {
 
   console.log('\n📋 MUESTRA DE ARCHIVOS EN DISCO NO ASOCIADOS (primeros 15):');
   // Encontrar qué archivos no se asocian a ningún inventario de la base de datos
-  const [todosLosObjetos] = await db.query('SELECT numero_inventario FROM objetos');
+  const { rows: todosLosObjetos } = await db.query('SELECT numero_inventario FROM objetos');
   const dbInvs = new Set(todosLosObjetos.map(o => (o.numero_inventario || '').trim().toLowerCase()));
   
   let printedCount = 0;

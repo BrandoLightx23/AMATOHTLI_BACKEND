@@ -218,7 +218,7 @@ async function processObject(obj, bar) {
   if (fs.existsSync(localPath) && fs.existsSync(thumbPath)) {
     if (!obj.imagen_local) {
       await db.query(
-        'UPDATE objetos SET imagen_local = ?, thumbnail_local = ? WHERE id = ?',
+        'UPDATE objetos SET imagen_local = $1, thumbnail_local = $2 WHERE id = $3',
         [localRoute, thumbRoute, obj.id]
       );
     }
@@ -277,7 +277,7 @@ async function processObject(obj, bar) {
 
   // ── Actualizar BD ────────────────────────────────────────────────────────
   await db.query(
-    'UPDATE objetos SET imagen_local = ?, thumbnail_local = ? WHERE id = ?',
+    'UPDATE objetos SET imagen_local = $1, thumbnail_local = $2 WHERE id = $3',
     [localRoute, thumbRoute, obj.id]
   );
 
@@ -292,7 +292,7 @@ async function main() {
   console.log('📋 Estrategia: skip-and-resume (los 429 se reintentan en la próxima pasada)');
   console.log('   Puedes interrumpir con Ctrl+C y volver a ejecutar.\n');
 
-  const [rows] = await db.query(
+  const { rows } = await db.query(
     `SELECT id, numero_inventario, imagen_url, imagen_local
      FROM objetos WHERE imagen_url IS NOT NULL ORDER BY id`
   );

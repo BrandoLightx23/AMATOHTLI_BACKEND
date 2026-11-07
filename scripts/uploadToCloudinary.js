@@ -50,7 +50,7 @@ async function main() {
   }
 
   // 1. Obtener objetos de la base de datos que tengan imágenes locales aún no subidas
-  const [objetos] = await db.query(
+  const { rows: objetos } = await db.query(
     'SELECT id, numero_inventario, imagen_local, thumbnail_local FROM objetos'
   );
   
@@ -108,7 +108,7 @@ async function main() {
 
       // Actualizar Base de Datos
       await db.query(
-        'UPDATE objetos SET imagen_local = ?, thumbnail_local = ? WHERE id = ?',
+        'UPDATE objetos SET imagen_local = $1, thumbnail_local = $2 WHERE id = $3',
         [cloudinaryUrl, cloudinaryThumbUrl, obj.id]
       );
 

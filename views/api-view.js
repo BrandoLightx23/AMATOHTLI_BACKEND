@@ -1,5 +1,5 @@
 // views/api-view.js
-const db = require('../config/db');
+const pool = require('../config/db');
 
 // ─── URL helpers & caché ──────────────────────────────────────────────────────
 
@@ -167,7 +167,7 @@ exports.obtenerTodos = async (req, res) => {
              otras_denominaciones, imagen_url, imagen_local, thumbnail_local
       FROM objetos
     `;
-    const [filas] = await db.query(query);
+    const { rows: filas } = await pool.query(query);
 
     const archivos = filas.map(mapRowToObject);
 
@@ -177,7 +177,7 @@ exports.obtenerTodos = async (req, res) => {
       archivos 
     });
   } catch (e) {
-    console.error(e);
+    console.error('Error en la consulta SQL:', e);
     res.status(500).json({ message: 'Error al obtener los datos desde SQL' });
   }
 };
@@ -198,7 +198,7 @@ exports.obtenerPorAnio = async (req, res) => {
              otras_denominaciones, imagen_url, imagen_local, thumbnail_local
       FROM objetos
     `;
-    const [filas] = await db.query(query);
+    const { rows: filas } = await pool.query(query);
 
     const filtrados = filas.filter(f => {
       const parsedYear = CAST_YEAR_NATIVO(f.fecha);
@@ -209,7 +209,7 @@ exports.obtenerPorAnio = async (req, res) => {
 
     res.json({ year, total: archivos.length, archivos });
   } catch (e) {
-    console.error(e);
+    console.error('Error en la consulta SQL:', e);
     res.status(500).json({ message: 'Error al filtrar por año en SQL' });
   }
 };
@@ -225,7 +225,7 @@ exports.obtenerDesconocidos = async (req, res) => {
              otras_denominaciones, imagen_url, imagen_local, thumbnail_local
       FROM objetos
     `;
-    const [filas] = await db.query(query);
+    const { rows: filas } = await pool.query(query);
 
     const filtrados = filas.filter(f => {
       return CAST_YEAR_NATIVO(f.fecha) === null;
@@ -235,7 +235,7 @@ exports.obtenerDesconocidos = async (req, res) => {
 
     res.json({ total: archivos.length, archivos });
   } catch (e) {
-    console.error(e);
+    console.error('Error en la consulta SQL:', e);
     res.status(500).json({ message: 'Error al obtener desconocidos desde SQL' });
   }
 };
@@ -253,19 +253,19 @@ exports.buscar = async (req, res) => {
              tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
              otras_denominaciones, imagen_url, imagen_local, thumbnail_local
       FROM objetos
-      WHERE LOWER(IFNULL(titulo, '')) LIKE LOWER(?) 
-         OR LOWER(IFNULL(lugar_origen, '')) LIKE LOWER(?) 
-         OR LOWER(IFNULL(estilo_cultura, '')) LIKE LOWER(?)
-         OR LOWER(IFNULL(material_tecnica, '')) LIKE LOWER(?)
+      WHERE LOWER(COALESCE(titulo, '')) LIKE LOWER($1)
+         OR LOWER(COALESCE(lugar_origen, '')) LIKE LOWER($2)
+         OR LOWER(COALESCE(estilo_cultura, '')) LIKE LOWER($3)
+         OR LOWER(COALESCE(material_tecnica, '')) LIKE LOWER($4)
     `;
     const patronBusqueda = `%${q}%`;
-    const [filas] = await db.query(query, [patronBusqueda, patronBusqueda, patronBusqueda, patronBusqueda]);
+    const { rows: filas } = await pool.query(query, [patronBusqueda, patronBusqueda, patronBusqueda, patronBusqueda]);
 
     const archivos = filas.map(mapRowToObject);
 
     res.json({ query: q, total: archivos.length, archivos });
   } catch (e) {
-    console.error(e);
+    console.error('Error en la consulta SQL:', e);
     res.status(500).json({ message: 'Error en el motor de búsqueda SQL' });
   }
 };
@@ -278,8 +278,8 @@ exports.wiki = async (req, res) => {
     const title = req.params.title;
     if (!title) return res.status(400).json({ message: 'Se requiere identificador/inventario' });
 
-    const query = `SELECT imagen_url, imagen_local, thumbnail_local FROM objetos WHERE numero_inventario = ? OR titulo = ? LIMIT 1`;
-    const [filas] = await db.query(query, [title, title]);
+    const query = `SELECT imagen_url, imagen_local, thumbnail_local FROM objetos WHERE numero_inventario = $1 OR titulo = $2 LIMIT 1`;
+    const { rows: filas } = await pool.query(query, [title, title]);
 
     if (filas.length > 0) {
       const f = filas[0];
@@ -293,7 +293,7 @@ exports.wiki = async (req, res) => {
 
     res.status(404).json({ message: 'Imagen no encontrada con el inventario provisto' });
   } catch (e) {
-    console.error(e);
+    console.error('Error en la consulta SQL:', e);
     res.status(500).json({ message: 'Error al obtener la imagen' });
   }
 };
@@ -420,7 +420,7 @@ exports.imageProxy = async (req, res) => {
 exports.checkUrls = async (req, res) => {
   try {
     const query = `SELECT id, titulo, imagen_url FROM objetos WHERE imagen_url IS NOT NULL LIMIT 681`;
-    const [filas] = await db.query(query);
+    const { rows: filas } = await pool.query(query);
 
     const TIMEOUT_MS = 10_000;
     const CONCURRENCY = 15;
@@ -462,7 +462,7 @@ exports.checkUrls = async (req, res) => {
       invalid_urls: invalid,
     });
   } catch (e) {
-    console.error(e);
+    console.error('Error en la consulta SQL:', e);
     res.status(500).json({ message: 'Error al verificar URLs' });
   }
 };
@@ -473,12 +473,12 @@ exports.checkUrls = async (req, res) => {
 exports.regions = async (req, res) => {
   try {
     const query = `SELECT DISTINCT lugar_origen FROM objetos WHERE lugar_origen IS NOT NULL AND lugar_origen != 'NULL'`;
-    const [filas] = await db.query(query);
+    const { rows: filas } = await pool.query(query);
     const listaRegiones = filas.map(f => f.lugar_origen);
     
     res.json({ regions: listaRegiones });
   } catch (e) {
-    console.error(e);
+    console.error('Error en la consulta SQL:', e);
     res.status(500).json({ message: 'Error al obtener las regiones' });
   }
 };
