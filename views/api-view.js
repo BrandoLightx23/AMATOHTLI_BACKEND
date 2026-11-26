@@ -1,5 +1,6 @@
 // views/api-view.js
 const pool = require('../config/db');
+const { getCountryFromRegion, getCoordinatesForRegion } = require('../lib/geography');
 
 // ─── URL helpers & caché ──────────────────────────────────────────────────────
 
@@ -129,18 +130,21 @@ exports.inicio = (req, res) => {
 function mapRowToObject(f) {
   const country = getCountryFromRegion(f.lugar_origen, f.estilo_cultura);
   const parsedYear = f.fecha ? CAST_YEAR_NATIVO(f.fecha) : null;
+  const coordinates = (f.lat != null && f.lon != null)
+    ? [Number(f.lon), Number(f.lat)]
+    : getCoordinatesForRegion(f.lugar_origen, f.estilo_cultura);
   return {
     id: f.id,
     titulo: f.titulo || 'Sin título',
     wikiTitle: f.numero_inventario || '',
     url: f.imagen_url,                  // URL Wikimedia original (respaldo)
     localImage: f.imagen_local || null, // Ruta local: /images/2025.385.jpg
-    thumbnail: f.thumbnail_local || null, // Thumbnail: /images/thumbnails/2025.385.jpg
+    thumbnail: f.thumbnail_local || f.thumb_url || null, // Thumbnail local o de Commons (800px)
     year: parsedYear,
     yearRaw: f.fecha,
-    region: f.lugar_origen ? `${f.lugar_origen}, ${country}` : country,
+    region: f.lugar_origen ? (country && country !== 'Desconocido' ? `${f.lugar_origen}, ${country}` : f.lugar_origen) : (country || 'Desconocido'),
     descripcion: `Cultura: ${f.estilo_cultura || 'Desconocida'}. Material/Técnica: ${f.material_tecnica || 'N/A'}. Dimensiones: ${f.dimensiones || 'N/A'}. Inventario: ${f.numero_inventario || 'N/A'}. Autor: ${f.autor || 'Desconocido'}`,
-    coordinates: getCoordinatesForRegion(f.lugar_origen, f.estilo_cultura),
+    coordinates,
     
     // Metadatos individuales unificados
     autor: f.autor || 'Desconocido',
@@ -164,7 +168,7 @@ exports.obtenerTodos = async (req, res) => {
     const query = `
       SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha, 
              tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
-             otras_denominaciones, imagen_url, imagen_local, thumbnail_local
+             otras_denominaciones, imagen_url, imagen_local, thumbnail_local, thumb_url, lat, lon
       FROM objetos
     `;
     const { rows: filas } = await pool.query(query);
@@ -195,7 +199,7 @@ exports.obtenerPorAnio = async (req, res) => {
     const query = `
       SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha, 
              tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
-             otras_denominaciones, imagen_url, imagen_local, thumbnail_local
+             otras_denominaciones, imagen_url, imagen_local, thumbnail_local, thumb_url, lat, lon
       FROM objetos
     `;
     const { rows: filas } = await pool.query(query);
@@ -222,7 +226,7 @@ exports.obtenerDesconocidos = async (req, res) => {
     const query = `
       SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha, 
              tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
-             otras_denominaciones, imagen_url, imagen_local, thumbnail_local
+             otras_denominaciones, imagen_url, imagen_local, thumbnail_local, thumb_url, lat, lon
       FROM objetos
     `;
     const { rows: filas } = await pool.query(query);
@@ -251,7 +255,7 @@ exports.buscar = async (req, res) => {
     const query = `
       SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha, 
              tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
-             otras_denominaciones, imagen_url, imagen_local, thumbnail_local
+             otras_denominaciones, imagen_url, imagen_local, thumbnail_local, thumb_url, lat, lon
       FROM objetos
       WHERE LOWER(COALESCE(titulo, '')) LIKE LOWER($1)
          OR LOWER(COALESCE(lugar_origen, '')) LIKE LOWER($2)
@@ -539,72 +543,4 @@ function CAST_YEAR_NATIVO(fechaStr) {
   }
   
   return null;
-}
-
-function getCountryFromRegion(region, estiloCultura) {
-  if (!region) return "Peru";
-  const reg = region.toLowerCase();
-  const cult = (estiloCultura || "").toLowerCase();
-
-  if (reg.includes("perú") || reg.includes("peru") || reg.includes("chancay") || cult.includes("chancay") || cult.includes("inca") || cult.includes("chimú") || cult.includes("moche") || cult.includes("nazca") || cult.includes("paracas") || cult.includes("chavín") || cult.includes("sican") || cult.includes("sicán") || cult.includes("vicús") || cult.includes("vicus") || cult.includes("cupisnique") || cult.includes("huari") || cult.includes("tiwanaku") || cult.includes("ica")) {
-    return "Peru";
-  }
-  if (reg.includes("ecuador") || reg.includes("valdivia") || cult.includes("valdivia") || cult.includes("bahía") || cult.includes("bahia") || cult.includes("chorrera") || cult.includes("guangala") || cult.includes("jama-coaque") || cult.includes("machalilla") || cult.includes("manteña") || cult.includes("mantena") || cult.includes("tuncahuán") || cult.includes("tuncahuan")) {
-    return "Ecuador";
-  }
-  if (reg.includes("colombia") || cult.includes("quimbaya") || cult.includes("tairona") || cult.includes("nariño") || cult.includes("narino") || cult.includes("tumaco")) {
-    return "Colombia";
-  }
-  if (reg.includes("bolivia")) {
-    return "Bolivia";
-  }
-  if (reg.includes("brasil") || reg.includes("brazil")) {
-    return "Brazil";
-  }
-  if (reg.includes("costa rica") || reg.includes("guanacaste") || reg.includes("vertiente atlántica") || reg.includes("vertiente atlantica")) {
-    return "Costa Rica";
-  }
-  if (reg.includes("guatemala") || reg.includes("maya")) {
-    return "Guatemala";
-  }
-  if (reg.includes("méxico") || reg.includes("mexico") || reg.includes("colima") || reg.includes("guerrero") || reg.includes("jalisco") || reg.includes("michoacán") || reg.includes("michoacan") || reg.includes("oaxaca") || reg.includes("veracruz") || reg.includes("guanajuato") || reg.includes("tlatilco") || reg.includes("chupícuaro") || reg.includes("chupicuaro") || reg.includes("teotihuacán") || reg.includes("teotihuacan") || reg.includes("olmeca") || reg.includes("tarasca") || cult.includes("azteca") || cult.includes("mezcala") || cult.includes("chontal") || cult.includes("nayarit")) {
-    return "Mexico";
-  }
-
-  // Fallback checks
-  if (reg.includes("peru") || reg.includes("perú")) return "Peru";
-  if (reg.includes("colombia")) return "Colombia";
-  if (reg.includes("ecuador")) return "Ecuador";
-  if (reg.includes("bolivia")) return "Bolivia";
-  if (reg.includes("brazil") || reg.includes("brasil")) return "Brazil";
-  if (reg.includes("costa rica")) return "Costa Rica";
-  if (reg.includes("guatemala")) return "Guatemala";
-  if (reg.includes("honduras")) return "Honduras";
-  if (reg.includes("belize") || reg.includes("belice")) return "Belize";
-  if (reg.includes("el salvador")) return "El Salvador";
-  if (reg.includes("nicaragua")) return "Nicaragua";
-  if (reg.includes("panama") || reg.includes("panamá")) return "Panama";
-
-  return "Peru";
-}
-
-function getCoordinatesForRegion(region, estiloCultura) {
-  const country = getCountryFromRegion(region, estiloCultura);
-  switch (country) {
-    case "Peru": return [-75.0152, -9.1900];
-    case "Colombia": return [-74.2973, 4.5709];
-    case "Ecuador": return [-78.1834, -1.8312];
-    case "Bolivia": return [-63.5887, -16.2902];
-    case "Brazil": return [-51.9253, -14.2350];
-    case "Costa Rica": return [-83.7534, 9.7489];
-    case "Guatemala": return [-90.2308, 15.7835];
-    case "Belize": return [-88.4976, 17.1899];
-    case "Honduras": return [-86.2419, 15.1999];
-    case "El Salvador": return [-88.8965, 13.7942];
-    case "Nicaragua": return [-85.2072, 12.8654];
-    case "Panama": return [-80.7821, 8.5380];
-    case "Mexico":
-    default:
-      return [-102.5528, 23.6345];
-  }
 }
