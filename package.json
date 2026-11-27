@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --test",
     "start": "node app.js",
     "dev": "nodemon app.js",
     "migrate": "node scripts/migrate.js",
@@ -12,7 +12,10 @@
     "process-local": "node scripts/processLocalImages.js",
     "diagnose-missing": "node scripts/diagnoseMissing.js",
     "upload-cloudinary": "node scripts/uploadToCloudinary.js",
-    "sync-aiven": "node scripts/syncToAiven.js"
+    "sync-aiven": "node scripts/syncToAiven.js",
+    "migrate-colecciones": "node scripts/migrate-colecciones.js",
+    "sync-commons": "node scripts/sync-commons.js",
+    "audit-cultures": "node scripts/audit-cultures.js"
   },
   "keywords": [],
   "author": "",
