@@ -157,7 +157,19 @@ function mapRowToObject(f) {
     material_tecnica: f.material_tecnica || 'N/A',
     numero_inventario: f.numero_inventario || 'N/A',
     dimensiones: f.dimensiones || 'N/A',
-    creditos: f.creditos || ''
+    creditos: f.creditos || '',
+    // Ficha completa (nuevos campos, compatibles hacia atrás)
+    descripcionCompleta: f.descripcion || null,
+    url_objeto: f.url_objeto || null,
+    urlMuseo: f.url_objeto || null,
+    commonsTitle: f.commons_title || null,
+    commonsPageUrl: f.commons_title
+      ? 'https://commons.wikimedia.org/wiki/' + encodeURIComponent(f.commons_title.replace(/^File:/i, 'File:'))
+      : null,
+    coleccion_id: f.coleccion_id ?? null,
+    coleccion_nombre: f.coleccion_nombre || null,
+    coleccion_slug: f.coleccion_slug || null,
+    imagenAltaRes: f.imagen_url || null
   };
 }
 
@@ -193,17 +205,53 @@ exports.obtenerTodos = async (req, res) => {
       collectionId = Number(value);
     }
 
+    const { cultura, material, region, year_min, year_max, sin_fecha, q } = req.query;
+    const conditions = [];
+    const params = [];
+    const add = (sql, val) => { params.push(val); conditions.push(sql.replace('$?', '$' + params.length)); };
+    if (hasCollectionId) add('o.coleccion_id = $?', collectionId);
+    if (cultura) add('LOWER(COALESCE(o.estilo_cultura, \'\')) = LOWER($?)', String(cultura));
+    if (material) add('LOWER(COALESCE(o.material_tecnica, \'\')) LIKE LOWER($?)', '%' + String(material) + '%');
+    if (region) add('LOWER(COALESCE(o.lugar_origen, \'\')) LIKE LOWER($?)', '%' + String(region) + '%');
+    if (q) {
+      const pat = '%' + String(q).trim() + '%';
+      params.push(pat, pat, pat, pat);
+      const n = params.length;
+      conditions.push(`(LOWER(COALESCE(o.titulo,'')) LIKE LOWER($${n-3}) OR LOWER(COALESCE(o.lugar_origen,'')) LIKE LOWER($${n-2}) OR LOWER(COALESCE(o.estilo_cultura,'')) LIKE LOWER($${n-1}) OR LOWER(COALESCE(o.material_tecnica,'')) LIKE LOWER($${n}))`);
+    }
+    const where = conditions.length ? ' WHERE ' + conditions.join(' AND ') : '';
     const query = `
-      SELECT id, coleccion_id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha,
-             tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
-             otras_denominaciones, imagen_url, imagen_local, thumbnail_local, thumb_url, lat, lon
-      FROM objetos${hasCollectionId ? ' WHERE coleccion_id = $1' : ''}
+      SELECT o.id, o.coleccion_id, o.url_objeto, o.titulo, o.autor, o.lugar_origen, o.estilo_cultura, o.fecha,
+             o.tipo_objeto, o.material_tecnica, o.numero_inventario, o.dimensiones, o.creditos,
+             o.otras_denominaciones, o.imagen_url, o.imagen_local, o.thumbnail_local, o.thumb_url, o.lat, o.lon,
+             o.descripcion, o.commons_title,
+             c.nombre AS coleccion_nombre, c.slug AS coleccion_slug
+      FROM objetos o
+      LEFT JOIN colecciones c ON c.id = o.coleccion_id
+      ${where}
     `;
-    const { rows: filas } = hasCollectionId
-      ? await pool.query(query, [collectionId])
-      : await pool.query(query);
+    const { rows: filas } = await pool.query(query, params);
 
-    const archivos = filas.map(mapRowToObject);
+    let filtrados = filas;
+    const yMin = year_min !== undefined ? Number(year_min) : null;
+    const yMax = year_max !== undefined ? Number(year_max) : null;
+    if (yMin !== null || yMax !== null) {
+      if ((yMin !== null && Number.isNaN(yMin)) || (yMax !== null && Number.isNaN(yMax))) {
+        return res.status(400).json({ message: 'year_min/year_max inválidos' });
+      }
+      filtrados = filtrados.filter(f => {
+        const y = CAST_YEAR_NATIVO(f.fecha);
+        if (y === null) return false;
+        if (yMin !== null && y < yMin) return false;
+        if (yMax !== null && y > yMax) return false;
+        return true;
+      });
+    }
+    if (sin_fecha === 'true' || sin_fecha === '1') {
+      filtrados = filtrados.filter(f => CAST_YEAR_NATIVO(f.fecha) === null);
+    }
+
+    const archivos = filtrados.map(mapRowToObject);
 
     res.json({ 
       categoria: "Anne-Marie und Caspar Reinhart Collection at Museum Rietberg, Zürich", 
@@ -213,6 +261,53 @@ exports.obtenerTodos = async (req, res) => {
   } catch (e) {
     console.error('Error en la consulta SQL:', e);
     res.status(500).json({ message: 'Error al obtener los datos desde SQL' });
+  }
+};
+
+// ------------------------------------------------------------
+// 1b. FILTROS DISPONIBLES (culturas, materiales, regiones, rango de fechas)
+// ------------------------------------------------------------
+exports.obtenerFiltros = async (req, res) => {
+  try {
+    const hasCollectionId = Object.prototype.hasOwnProperty.call(req.query, 'coleccion_id');
+    let collectionId;
+    if (hasCollectionId) {
+      const value = req.query.coleccion_id;
+      if (typeof value !== 'string' || !/^\d+$/.test(value) || !Number.isSafeInteger(Number(value)) || Number(value) < 1) {
+        return res.status(400).json({ message: 'coleccion_id inválido' });
+      }
+      collectionId = Number(value);
+    }
+    const where = hasCollectionId ? 'WHERE coleccion_id = $1' : '';
+    const params = hasCollectionId ? [collectionId] : [];
+    const { rows: filas } = await pool.query(
+      `SELECT estilo_cultura, material_tecnica, lugar_origen, tipo_objeto, fecha FROM objetos ${where}`,
+      params
+    );
+    const countBy = (key) => {
+      const map = new Map();
+      for (const f of filas) {
+        const v = (f[key] || '').trim();
+        if (!v) continue;
+        map.set(v, (map.get(v) || 0) + 1);
+      }
+      return [...map.entries()].map(([valor, total]) => ({ valor, total })).sort((a, b) => b.total - a.total);
+    };
+    const years = filas.map(f => CAST_YEAR_NATIVO(f.fecha)).filter(y => y !== null);
+    const sinFecha = filas.filter(f => CAST_YEAR_NATIVO(f.fecha) === null).length;
+    res.json({
+      total: filas.length,
+      culturas: countBy('estilo_cultura'),
+      materiales: countBy('material_tecnica'),
+      regiones: countBy('lugar_origen'),
+      tipos: countBy('tipo_objeto'),
+      fechaMin: years.length ? Math.min(...years) : null,
+      fechaMax: years.length ? Math.max(...years) : null,
+      sinFecha,
+    });
+  } catch (e) {
+    console.error('Error al obtener los filtros:', e);
+    res.status(500).json({ message: 'Error al obtener los filtros desde SQL' });
   }
 };
 
