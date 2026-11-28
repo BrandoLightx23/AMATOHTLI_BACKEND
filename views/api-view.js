@@ -163,15 +163,44 @@ function mapRowToObject(f) {
 // ------------------------------------------------------------
 // 1. OBTENER TODOS
 // ------------------------------------------------------------
+exports.obtenerColecciones = async (req, res) => {
+  try {
+    const query = `
+      SELECT c.id, c.nombre, c.slug, COUNT(o.id)::int AS total
+      FROM colecciones c
+      LEFT JOIN objetos o ON o.coleccion_id = c.id
+      GROUP BY c.id
+      ORDER BY c.id
+    `;
+    const { rows } = await pool.query(query);
+    res.json(rows.map(({ id, nombre, slug, total }) => ({ id, nombre, slug, total })));
+  } catch (e) {
+    console.error('Error al obtener las colecciones:', e);
+    res.status(500).json({ message: 'Error al obtener las colecciones desde SQL' });
+  }
+};
+
 exports.obtenerTodos = async (req, res) => {
   try {
+    const hasCollectionId = Object.prototype.hasOwnProperty.call(req.query, 'coleccion_id');
+    let collectionId;
+    if (hasCollectionId) {
+      const value = req.query.coleccion_id;
+      if (typeof value !== 'string' || !/^\d+$/.test(value) || !Number.isSafeInteger(Number(value)) || Number(value) < 1) {
+        return res.status(400).json({ message: 'coleccion_id inválido' });
+      }
+      collectionId = Number(value);
+    }
+
     const query = `
       SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha, 
              tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
              otras_denominaciones, imagen_url, imagen_local, thumbnail_local, thumb_url, lat, lon
-      FROM objetos
+      FROM objetos${hasCollectionId ? ' WHERE coleccion_id = $1' : ''}
     `;
-    const { rows: filas } = await pool.query(query);
+    const { rows: filas } = hasCollectionId
+      ? await pool.query(query, [collectionId])
+      : await pool.query(query);
 
     const archivos = filas.map(mapRowToObject);
 

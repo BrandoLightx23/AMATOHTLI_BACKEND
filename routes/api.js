@@ -3,6 +3,7 @@ const router = express.Router();
 const APIVIEW = require('../views/api-view');
 
 router.get('/', APIVIEW.inicio);
+router.get('/colecciones', APIVIEW.obtenerColecciones);
 router.get('/objects', APIVIEW.obtenerTodos);
 router.get('/objects/anio/:year', APIVIEW.obtenerPorAnio);
 router.get('/objects/desconocidos', APIVIEW.obtenerDesconocidos);
