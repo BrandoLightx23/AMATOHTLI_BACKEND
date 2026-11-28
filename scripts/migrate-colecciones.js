@@ -44,6 +44,7 @@ async function migrate() {
       "ALTER TABLE objetos ADD COLUMN IF NOT EXISTS estilo_cultura_source TEXT NOT NULL DEFAULT 'legacy'",
       "ALTER TABLE objetos ADD COLUMN IF NOT EXISTS lugar_origen_source TEXT NOT NULL DEFAULT 'legacy'",
       'ALTER TABLE objetos ADD COLUMN IF NOT EXISTS descripcion TEXT',
+      'ALTER TABLE objetos ALTER COLUMN descripcion TYPE TEXT',
     ];
     for (const sql of columns) await client.query(sql);
     await client.query(`
