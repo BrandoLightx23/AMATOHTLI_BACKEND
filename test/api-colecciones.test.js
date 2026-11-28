@@ -44,7 +44,7 @@ test('GET /objects remains unfiltered without coleccion_id', async () => {
   const calls = [];
   pool.query = async (...args) => {
     calls.push(args);
-    return { rows: [{ id: 1, fecha: null }] };
+    return { rows: [{ id: 1, coleccion_id: 7, fecha: null }] };
   };
 
   const res = response();
@@ -55,13 +55,15 @@ test('GET /objects remains unfiltered without coleccion_id', async () => {
   assert.doesNotMatch(calls[0][0], /WHERE coleccion_id/);
   assert.deepEqual(Object.keys(res.body), ['categoria', 'total', 'archivos']);
   assert.equal(res.body.total, 1);
+  assert.equal(res.body.archivos[0].coleccion_id, 7);
+  assert.match(calls[0][0], /SELECT id, coleccion_id,/);
 });
 
 test('GET /objects filters using a parameter and preserves the response envelope', async () => {
   let called;
   pool.query = async (...args) => {
     called = args;
-    return { rows: [{ id: 1, fecha: null }] };
+    return { rows: [{ id: 1, coleccion_id: 42, fecha: null }] };
   };
 
   const res = response();
@@ -71,6 +73,7 @@ test('GET /objects filters using a parameter and preserves the response envelope
   assert.deepEqual(called[1], [42]);
   assert.deepEqual(Object.keys(res.body), ['categoria', 'total', 'archivos']);
   assert.equal(res.body.total, 1);
+  assert.equal(res.body.archivos[0].coleccion_id, 42);
 });
 
 test('GET /objects rejects invalid collection IDs before querying', async () => {

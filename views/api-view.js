@@ -135,6 +135,7 @@ function mapRowToObject(f) {
     : getCoordinatesForRegion(f.lugar_origen, f.estilo_cultura);
   return {
     id: f.id,
+    coleccion_id: f.coleccion_id,
     titulo: f.titulo || 'Sin título',
     wikiTitle: f.numero_inventario || '',
     url: f.imagen_url,                  // URL Wikimedia original (respaldo)
@@ -193,7 +194,7 @@ exports.obtenerTodos = async (req, res) => {
     }
 
     const query = `
-      SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha, 
+      SELECT id, coleccion_id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha,
              tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
              otras_denominaciones, imagen_url, imagen_local, thumbnail_local, thumb_url, lat, lon
       FROM objetos${hasCollectionId ? ' WHERE coleccion_id = $1' : ''}
