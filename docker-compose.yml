@@ -1,0 +1,29 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: amatohtli-backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - backend-images:/app/public/images
+
+  libretranslate:
+    image: libretranslate/libretranslate:latest
+    container_name: amatohtli-libretranslate
+    restart: unless-stopped
+    profiles:
+      - translate
+    command: --load-only en,es,de,it
+    ports:
+      - "127.0.0.1:5000:5000"
+
+volumes:
+  backend-images:

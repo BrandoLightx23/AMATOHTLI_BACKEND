@@ -1,6 +1,44 @@
 # Museo_Rietberg
 Proyecto de difusión de piezas del museo.
 
+## Ejecutar el backend con Docker
+
+1. Crea tu archivo de entorno local:
+
+   ```sh
+   cp .env.example .env
+   ```
+
+   Completa las variables `DB_*` en `.env`. Este archivo no se incluye en la imagen.
+
+2. Construye y levanta el backend:
+
+   ```sh
+   docker compose up --build -d
+   ```
+
+3. Consulta el estado y los logs del contenedor:
+
+   ```sh
+   docker compose ps
+   docker compose logs -f backend
+   ```
+
+   Para ver también los registros anteriores:
+
+   ```sh
+   docker compose logs --tail=200 backend
+   ```
+
+   La API queda disponible en `http://localhost:3000/api` y las imágenes locales
+   en `http://localhost:3000/images/`.
+
+Para iniciar LibreTranslate junto con el backend:
+
+```sh
+docker compose --profile translate up --build -d
+```
+
 ## Traducciones del catálogo
 
 Las traducciones al inglés o español se guardan aparte de los textos originales en

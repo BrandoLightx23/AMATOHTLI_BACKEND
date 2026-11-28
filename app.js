@@ -4,7 +4,7 @@ const morgan  = require('morgan');
 const cors    = require('cors');
 const path    = require('path');
 const app     = express();
-const port    = 3000;
+const port    = Number(process.env.PORT) || 3000;
 
 app.use(cors());
 
@@ -26,7 +26,7 @@ app.use('/images', express.static(path.join(__dirname, 'public', 'images'), {
 app.use('/api', require('./routes/api'));
 
 // Iniciar servidor
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
-  console.log(`Imágenes locales:   http://localhost:${port}/images/`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Servidor escuchando en http://0.0.0.0:${port}`);
+  console.log(`Imágenes locales:   http://0.0.0.0:${port}/images/`);
 });
