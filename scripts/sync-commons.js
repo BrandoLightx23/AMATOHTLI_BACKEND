@@ -885,10 +885,15 @@ function enrichWithCommonsArtwork(items) {
     fill('lugar_origen', art.lugar_origen, 'lugar_origen_source');
     fill('estilo_cultura', art.estilo_cultura, 'estilo_cultura_source');
     fill('tipo_objeto', art.tipo_objeto);
-    // Accession desde la URL del museo (p. ej. clevelandart.org/art/1980.127)
-    if (!merged.numero_inventario && merged.url_objeto) {
+    // Accession desde la URL del museo (p. ej. clevelandart.org/art/1980.127);
+    // corrige accesiones truncadas en la ficha (p. ej. "1996.4" -> "1996.400")
+    if (merged.url_objeto) {
       const um = merged.url_objeto.match(/(\d{4}\.\d+(?:\.\d+)?)/);
-      if (um) merged.numero_inventario = um[1];
+      if (um) {
+        const urlAcc = um[1];
+        if (!merged.numero_inventario) merged.numero_inventario = urlAcc;
+        else if (urlAcc.length > merged.numero_inventario.length && urlAcc.startsWith(merged.numero_inventario)) merged.numero_inventario = urlAcc;
+      }
     }
     // Seguridad: campos varchar(255) no deben desbordar la BD
     for (const k of ['titulo','lugar_origen','estilo_cultura','fecha','tipo_objeto','material_tecnica','dimensiones','creditos','numero_inventario','url_objeto']) {
