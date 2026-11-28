@@ -506,7 +506,7 @@ function parsePlaceAndCulture(placeRaw, description) {
     const kept = [];
     for (const seg of segments) {
       if (/maya/i.test(seg)) { cultura = 'Maya'; continue; }
-      const knownCulture = seg.match(/\b(Olmec|Aztec|Mexica|Inca|Incan|Chavin|Chavín|Valdivia|Moche|Nazca|Nasca|Wari|Tiahuanaco|Tiwanaku|Teotihuacan|Toltec|Zapotec|Mixtec|Mixteca|Chimu|Chimú|Sican|Sicán|Lambayeque|Conte|Chocholá|Chochola|Jaina|Coclé|Cocle|Nicoya|Colima|Michoacán|Michoacan|Punuk|Mezcala|Mississippian|Micmac)\b/i);
+      const knownCulture = seg.match(/\b(Olmec|Aztec|Mexica|Inca|Incan|Chavin|Chavín|Valdivia|Moche|Nazca|Nasca|Wari|Tiahuanaco|Tiwanaku|Teotihuacan|Toltec|Zapotec|Mixtec|Mixteca|Chimu|Chimú|Sican|Sicán|Lambayeque|Conte|Chocholá|Chochola|Jaina|Coclé|Cocle|Nicoya|Colima|Michoacán|Michoacan|Punuk|Mezcala|Mississippian|Micmac|Calima|Yotoco|Sinú|Sinu|Chimú|Chimu)\b/i);
       if (knownCulture) { cultura = knownCulture[1]; continue; }
       const styleMatch = seg.match(/^(.+?)\s+style$/i);
       if (styleMatch) { cultura = styleMatch[1].trim(); continue; }
@@ -521,7 +521,7 @@ function parsePlaceAndCulture(placeRaw, description) {
   if (!cultura && description) {
     if (/maya/i.test(description)) cultura = 'Maya';
     else {
-      const km = description.match(/\b(Olmec|Aztec|Mexica|Inca|Chavin|Chavín|Valdivia|Moche|Nazca|Wari|Teotihuacan|Toltec|Zapotec|Mixtec|Chimu|Sican|Lambayeque|Conte)\b/i);
+      const km = description.match(/\b(Olmec|Aztec|Mexica|Inca|Chavin|Chavín|Valdivia|Moche|Nazca|Wari|Teotihuacan|Toltec|Zapotec|Mixtec|Chimu|Sican|Lambayeque|Conte|Calima|Yotoco|Cocle|Coclé)\b/i);
       if (km) cultura = km[1];
     }
   }
@@ -573,8 +573,10 @@ function parseLacmaDescription(rawDescription) {
 /** Parsea descripción estilo Met "Cultura; Objeto; Material-Tipo". */
 function parseMetDescription(description) {
   if (!description || !description.includes(';') || description.includes(':')) return {};
+  if (description.length > 120) return {};
   const parts = description.split(';').map(x => x.trim()).filter(Boolean);
   if (parts.length < 2) return {};
+  if (parts.some(x => x.length > 50)) return {};
   const out = {};
   if (!out.estilo_cultura) out.estilo_cultura = parts[0];
   if (parts[1]) out.tipo_objeto = parts[1];
