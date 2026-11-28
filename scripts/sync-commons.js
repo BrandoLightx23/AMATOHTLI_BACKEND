@@ -328,8 +328,11 @@ async function enrichWithWikidata(items) {
 /** Parsea "Inv.Nr.-2025.1280" del título de Commons; null si no trae. */
 function parseInventory(title) {
   if (!title) return null;
-  const m = title.match(/Inv\.Nr\.?-(\d{4}\.\d+(?:\.\d+)*)/i);
-  return m ? m[1] : null;
+  const m = title.match(/Inv\.Nr\.?(\d{4}\.\d+(?:\.\d+)*)/i);
+  if (m) return m[1];
+  // Fallback Cleveland / museos con accession "YYYY.NNN[.M]" en el título.
+  const acc = title.match(/(\d{4}\.\d+(?:\.\d+)?)/);
+  return acc ? acc[1] : null;
 }
 
 /** Reproduce exactamente los títulos automáticos de las versiones anteriores. */
@@ -359,6 +362,62 @@ function chunk(arr, size) {
   const out = [];
   for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
   return out;
+}
+
+/** True si el archivo es un recorte/detalle, no la foto principal de la pieza. */
+function isCroppedOrDetail(title) {
+  return /\(cropped\)|\bdetail\b|\bdeatil\b/i.test(title || '');
+}
+
+/** Extrae el accession "YYYY.NNN[.M]" del título; null si no trae. */
+function extractAccession(title) {
+  const m = (title || '').match(/(\d{4}\.\d+(?:\.\d+)?)/);
+  return m ? m[1] : null;
+}
+
+/** Puntúa qué foto conservar cuando hay varias del mismo accession. */
+function accessionScore(item) {
+  const t = item.title || '';
+  let score = 0;
+  if (/^File:Clevelandart \d{4}\.\d+(?:\.\d+)?\.jpg$/i.test(t)) score += 30;
+  else if (/^File:Clevelandart /i.test(t)) score += 20;
+  if (/\.jpg$/i.test(t)) score += 10;
+  if (/\.tif{1,2}$/i.test(t)) score -= 10;
+  if (/Cleveland Museum of Art/i.test(t)) score -= 2;
+  return score;
+}
+
+/**
+ * Deduplica por accession number (Cleveland, etc.):
+ *  - descarta recortes/detalles "(cropped)", "Detail", "Deatil"
+ *  - por accession conserva solo la mejor foto (principal .jpg)
+ *  - "1967.155.1" y "1967.155.2" se tratan como piezas distintas
+ * Devuelve { kept, skippedCropped, skippedDuplicates }.
+ */
+function deduplicateByAccession(items) {
+  const skippedCropped = [];
+  const candidates = [];
+  for (const item of items) {
+    if (isCroppedOrDetail(item.title)) skippedCropped.push(item);
+    else candidates.push(item);
+  }
+  const groups = new Map();
+  const kept = [];
+  for (const item of candidates) {
+    const acc = extractAccession(item.title);
+    if (!acc) { kept.push(item); continue; }
+    if (!groups.has(acc)) groups.set(acc, []);
+    groups.get(acc).push(item);
+  }
+  const skippedDuplicates = [];
+  for (const [acc, group] of groups) {
+    if (group.length === 1) { kept.push(group[0]); continue; }
+    const ranked = [...group].sort((a, b) => accessionScore(b) - accessionScore(a));
+    kept.push(ranked[0]);
+    skippedDuplicates.push(...ranked.slice(1));
+  }
+  kept.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+  return { kept, skippedCropped, skippedDuplicates };
 }
 
 // ── 3. Upsert en BD ─────────────────────────────────────────────────────────
@@ -568,9 +627,21 @@ async function main() {
   const conCoords = withImage.filter(e => e.lat != null && e.lon != null).length;
   console.log(`   ${conLugar}/${withImage.length} con lugar_origen, ${conCoords}/${withImage.length} con coordenadas.`);
 
+  // 2c. Deduplicación por accession (Cleveland: recortes/detalles y .tif duplicados)
+  const { kept, skippedCropped, skippedDuplicates } = deduplicateByAccession(withImage);
+  if (skippedCropped.length || skippedDuplicates.length) {
+    console.log(`\n2c/3 Deduplicación por accession:`);
+    console.log(`   ${skippedCropped.length} recortes/detalles omitidos, ${skippedDuplicates.length} duplicados por accession omitidos.`);
+    for (const d of skippedDuplicates) {
+      console.log(`   - duplicado omitido: ${d.title}`);
+    }
+    console.log(`   ${withImage.length} \u2192 ${kept.length} piezas únicas.`);
+  }
+  const deduped = kept;
+
   if (dryRun) {
     console.log('\n3/3 Dry-run terminado. Primeras 5 piezas:');
-    withImage.slice(0, 5).forEach(e => {
+    deduped.slice(0, 5).forEach(e => {
       console.log(`   - ${e.title} | lugar=${e.lugar_origen || 'N/A'} | coords=${e.lat ?? 'N/A'},${e.lon ?? 'N/A'}`);
     });
     console.log('\n✅ Sin cambios en la BD.');
@@ -584,7 +655,7 @@ async function main() {
     const coleccionId = await ensureCollection(category);
     console.log(`   colección id=${coleccionId}`);
 
-    for (const item of withImage) {
+    for (const item of deduped) {
       try {
         counts[await saveObject(db, coleccionId, item)]++;
       } catch (err) {
@@ -593,7 +664,7 @@ async function main() {
       }
     }
   } catch (err) {
-    counts.failed = withImage.length;
+    counts.failed = deduped.length;
     console.error(`   ❌ No se pudo preparar la colección: ${err.message}`);
   }
 
@@ -621,6 +692,9 @@ if (require.main === module) {
 module.exports = {
   BATCH_SIZE,
   chunk,
+  deduplicateByAccession,
+  extractAccession,
+  isCroppedOrDetail,
   cleanTitle,
   enrichBatch,
   extractDimensions,
