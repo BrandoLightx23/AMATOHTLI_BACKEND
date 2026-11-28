@@ -309,18 +309,21 @@ async function enrichWithWikidata(items) {
       ...getClaimIds(ent, 'P2079').map(id => getLabel(refEntities[id])),
     ].filter(Boolean);
     const url_objeto = ent?.claims?.P973?.[0]?.mainsnak?.datavalue?.value || null;
+    const invRaw = ent?.claims?.P217?.[0]?.mainsnak?.datavalue?.value;
+    const numero_inventario = typeof invRaw === 'string' && /^\d{4}\.\d+(?:\.\d+)?$/.test(invRaw.trim()) ? invRaw.trim() : null;
 
     return {
       ...item,
-      lugar_origen,
-      lat,
-      lon,
-      estilo_cultura: cultura.length ? cultura.join(', ') : null,
-      tipo_objeto: tipos.length ? tipos[0] : null,
-      material_tecnica: materiales.length ? [...new Set(materiales)].join(', ') : null,
-      fecha: extractFecha(ent),
-      dimensiones: extractDimensions(ent),
-      url_objeto,
+      lugar_origen: item.lugar_origen || lugar_origen,
+      lat: item.lat ?? lat,
+      lon: item.lon ?? lon,
+      estilo_cultura: item.estilo_cultura || (cultura.length ? cultura.join(', ') : null),
+      tipo_objeto: item.tipo_objeto || (tipos.length ? tipos[0] : null),
+      material_tecnica: item.material_tecnica || (materiales.length ? [...new Set(materiales)].join(', ') : null),
+      fecha: item.fecha || extractFecha(ent),
+      dimensiones: item.dimensiones || extractDimensions(ent),
+      url_objeto: item.url_objeto || url_objeto,
+      numero_inventario: item.numero_inventario || numero_inventario,
     };
   });
 }
@@ -652,9 +655,12 @@ function parseFilenameMetadata(title) {
   }
   // Cultura
   const normalized = name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  const cultureRe = /\b(lambayeque|sican|nazca|nasca|inca|calima|yotoco|valdivia|cocle|moche|chavin|maya|aztec|olmec|zapotec|mixtec|toltec|teotihuacan|wari|tiahuanaco|tiwanaku|chimu|paracas|pachacamac|huastec|huaxtec)\b/i;
-  const cm = normalized.match(cultureRe);
-  if (cm) out.estilo_cultura = cm[1][0].toUpperCase() + cm[1].slice(1);
+  const cultureRe = /\b(maya|lambayeque|sican|nazca|nasca|inca|calima|yotoco|valdivia|cocle|moche|chavin|aztec|olmec|zapotec|mixtec|toltec|teotihuacan|wari|tiahuanaco|tiwanaku|chimu|paracas|pachacamac|huastec|huaxtec|jaina)\b/i;
+  if (/\bmaya\b/i.test(normalized)) out.estilo_cultura = 'Maya';
+  else {
+    const cm = normalized.match(cultureRe);
+    if (cm) out.estilo_cultura = cm[1][0].toUpperCase() + cm[1].slice(1);
+  }
   // Material
   if (/\boro\b|gold/i.test(name)) out.material_tecnica = 'Gold';
   else if (/plata|silver/i.test(name)) out.material_tecnica = 'Silver';
@@ -672,6 +678,9 @@ function parseFilenameMetadata(title) {
   else if (/ande centrali|central andes/i.test(name)) out.lugar_origen = 'Central Andes';
   else if (/\bmessico\b/i.test(name)) out.lugar_origen = 'Mexico';
   else if (/\bpachacamac\b/i.test(name)) out.lugar_origen = 'Peru';
+  // Lugar en medio del nombre: "600–900 Mexico, Campeche, Jaina Island, Maya"
+  const mexM = name.match(/\b(Mexico(?:,\s*[^,]+){0,2})/i);
+  if (!out.lugar_origen && mexM) out.lugar_origen = mexM[1].trim();
   return out;
 }
 
@@ -876,6 +885,11 @@ function enrichWithCommonsArtwork(items) {
     fill('lugar_origen', art.lugar_origen, 'lugar_origen_source');
     fill('estilo_cultura', art.estilo_cultura, 'estilo_cultura_source');
     fill('tipo_objeto', art.tipo_objeto);
+    // Accession desde la URL del museo (p. ej. clevelandart.org/art/1980.127)
+    if (!merged.numero_inventario && merged.url_objeto) {
+      const um = merged.url_objeto.match(/(\d{4}\.\d+(?:\.\d+)?)/);
+      if (um) merged.numero_inventario = um[1];
+    }
     // Seguridad: campos varchar(255) no deben desbordar la BD
     for (const k of ['titulo','lugar_origen','estilo_cultura','fecha','tipo_objeto','material_tecnica','dimensiones','creditos','numero_inventario','url_objeto']) {
       if (typeof merged[k] === 'string' && merged[k].length > 255) merged[k] = merged[k].slice(0, 255);
