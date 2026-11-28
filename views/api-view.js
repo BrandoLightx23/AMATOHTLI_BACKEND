@@ -219,10 +219,9 @@ exports.obtenerTodos = async (req, res) => {
 
     const archivos = filas.map(fila => mapRowToObject(fila, idioma));
 
-    res.json({ 
-      categoria: "Anne-Marie und Caspar Reinhart Collection at Museum Rietberg, Zürich", 
-      total: archivos.length, 
-      archivos 
+    res.json({
+      total: archivos.length,
+      archivos
     });
   } catch (e) {
     console.error('Error en la consulta SQL:', e);
@@ -240,20 +239,24 @@ exports.obtenerPorAnio = async (req, res) => {
 
     const sigloFin = year + 99;
 
+    const idioma = req.query.idioma === 'en' ? 'en' : 'es';
     const query = `
-      SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha, 
-             tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
-             otras_denominaciones, imagen_url, imagen_local, thumbnail_local, thumb_url, lat, lon
-      FROM objetos
+      SELECT o.id, o.url_objeto, o.titulo, o.autor, o.lugar_origen, o.estilo_cultura, o.fecha,
+             o.tipo_objeto, o.material_tecnica, o.numero_inventario, o.dimensiones, o.creditos,
+             o.otras_denominaciones, o.imagen_url, o.imagen_local, o.thumbnail_local, o.thumb_url, o.lat, o.lon,
+             t.campos AS translated_fields
+      FROM objetos o
+      LEFT JOIN objeto_traducciones t
+        ON t.objeto_id = o.id AND t.idioma = $1
     `;
-    const { rows: filas } = await pool.query(query);
+    const { rows: filas } = await pool.query(query, [idioma]);
 
     const filtrados = filas.filter(f => {
       const parsedYear = CAST_YEAR_NATIVO(f.fecha);
       return parsedYear !== null && parsedYear >= year && parsedYear <= sigloFin;
     });
 
-    const archivos = filtrados.map(mapRowToObject);
+    const archivos = filtrados.map(f => mapRowToObject(f, idioma));
 
     res.json({ year, total: archivos.length, archivos });
   } catch (e) {
@@ -267,19 +270,23 @@ exports.obtenerPorAnio = async (req, res) => {
 // ------------------------------------------------------------
 exports.obtenerDesconocidos = async (req, res) => {
   try {
+    const idioma = req.query.idioma === 'en' ? 'en' : 'es';
     const query = `
-      SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha, 
-             tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
-             otras_denominaciones, imagen_url, imagen_local, thumbnail_local, thumb_url, lat, lon
-      FROM objetos
+      SELECT o.id, o.url_objeto, o.titulo, o.autor, o.lugar_origen, o.estilo_cultura, o.fecha,
+             o.tipo_objeto, o.material_tecnica, o.numero_inventario, o.dimensiones, o.creditos,
+             o.otras_denominaciones, o.imagen_url, o.imagen_local, o.thumbnail_local, o.thumb_url, o.lat, o.lon,
+             t.campos AS translated_fields
+      FROM objetos o
+      LEFT JOIN objeto_traducciones t
+        ON t.objeto_id = o.id AND t.idioma = $1
     `;
-    const { rows: filas } = await pool.query(query);
+    const { rows: filas } = await pool.query(query, [idioma]);
 
     const filtrados = filas.filter(f => {
       return CAST_YEAR_NATIVO(f.fecha) === null;
     });
 
-    const archivos = filtrados.map(mapRowToObject);
+    const archivos = filtrados.map(f => mapRowToObject(f, idioma));
 
     res.json({ total: archivos.length, archivos });
   } catch (e) {
@@ -296,20 +303,24 @@ exports.buscar = async (req, res) => {
     const q = (req.query.q || '').trim();
     if (!q) return res.json({ total: 0, archivos: [] });
 
+    const idioma = req.query.idioma === 'en' ? 'en' : 'es';
     const query = `
-      SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha, 
-             tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
-             otras_denominaciones, imagen_url, imagen_local, thumbnail_local, thumb_url, lat, lon
-      FROM objetos
-      WHERE LOWER(COALESCE(titulo, '')) LIKE LOWER($1)
-         OR LOWER(COALESCE(lugar_origen, '')) LIKE LOWER($2)
-         OR LOWER(COALESCE(estilo_cultura, '')) LIKE LOWER($3)
-         OR LOWER(COALESCE(material_tecnica, '')) LIKE LOWER($4)
+      SELECT o.id, o.url_objeto, o.titulo, o.autor, o.lugar_origen, o.estilo_cultura, o.fecha,
+             o.tipo_objeto, o.material_tecnica, o.numero_inventario, o.dimensiones, o.creditos,
+             o.otras_denominaciones, o.imagen_url, o.imagen_local, o.thumbnail_local, o.thumb_url, o.lat, o.lon,
+             t.campos AS translated_fields
+      FROM objetos o
+      LEFT JOIN objeto_traducciones t
+        ON t.objeto_id = o.id AND t.idioma = $5
+      WHERE LOWER(COALESCE(o.titulo, '')) LIKE LOWER($1)
+         OR LOWER(COALESCE(o.lugar_origen, '')) LIKE LOWER($2)
+         OR LOWER(COALESCE(o.estilo_cultura, '')) LIKE LOWER($3)
+         OR LOWER(COALESCE(o.material_tecnica, '')) LIKE LOWER($4)
     `;
     const patronBusqueda = `%${q}%`;
-    const { rows: filas } = await pool.query(query, [patronBusqueda, patronBusqueda, patronBusqueda, patronBusqueda]);
+    const { rows: filas } = await pool.query(query, [patronBusqueda, patronBusqueda, patronBusqueda, patronBusqueda, idioma]);
 
-    const archivos = filas.map(mapRowToObject);
+    const archivos = filas.map(f => mapRowToObject(f, idioma));
 
     res.json({ query: q, total: archivos.length, archivos });
   } catch (e) {
@@ -588,3 +599,4 @@ function CAST_YEAR_NATIVO(fechaStr) {
   
   return null;
 }
+

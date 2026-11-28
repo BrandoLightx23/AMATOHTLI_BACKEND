@@ -1024,7 +1024,7 @@ async function ensureCollection(category) {
 }
 
 async function saveObject(pool, coleccionId, item) {
-  const inventario = parseInventory(item.title);
+  const inventario = parseInventory(item.title) || item.numero_inventario || null;
   const client = await pool.connect();
   let inTransaction = false;
   try {
@@ -1109,8 +1109,8 @@ async function saveObject(pool, coleccionId, item) {
          image_height = COALESCE($10::integer, image_height),
          mime = COALESCE($11::text, mime),
          dimensiones = COALESCE($12::varchar, dimensiones),
-         lugar_origen = CASE WHEN lugar_origen_source IN ('wikidata', 'commons') THEN $13::varchar ELSE lugar_origen END,
-         estilo_cultura = CASE WHEN estilo_cultura_source IN ('wikidata', 'commons') THEN $14::varchar ELSE estilo_cultura END,
+         lugar_origen = COALESCE(NULLIF(lugar_origen, ''), $13::varchar),
+         estilo_cultura = COALESCE(NULLIF(estilo_cultura, ''), $14::varchar),
          fecha = COALESCE($15::varchar, fecha),
          tipo_objeto = COALESCE($16::varchar, tipo_objeto),
          material_tecnica = COALESCE($17::text, material_tecnica),
@@ -1129,8 +1129,8 @@ async function saveObject(pool, coleccionId, item) {
          OR ($10::integer IS NOT NULL AND image_height IS DISTINCT FROM $10::integer)
          OR ($11::text IS NOT NULL AND mime IS DISTINCT FROM $11::text)
          OR ($12::varchar IS NOT NULL AND dimensiones IS DISTINCT FROM $12::varchar)
-         OR (lugar_origen_source IN ('wikidata', 'commons') AND lugar_origen IS DISTINCT FROM $13::varchar)
-         OR (estilo_cultura_source IN ('wikidata', 'commons') AND estilo_cultura IS DISTINCT FROM $14::varchar)
+         OR ((lugar_origen IS NULL OR lugar_origen = '') AND $13::varchar IS NOT NULL)
+         OR ((estilo_cultura IS NULL OR estilo_cultura = '') AND $14::varchar IS NOT NULL)
          OR ($15::varchar IS NOT NULL AND fecha IS DISTINCT FROM $15::varchar)
          OR ($16::varchar IS NOT NULL AND tipo_objeto IS DISTINCT FROM $16::varchar)
          OR ($17::text IS NOT NULL AND material_tecnica IS DISTINCT FROM $17::text)
@@ -1305,3 +1305,4 @@ module.exports = {
   parseInventory,
   saveObject,
 };
+
