@@ -24,6 +24,7 @@ ALTER TABLE objetos ADD COLUMN IF NOT EXISTS lat            DOUBLE PRECISION;
 ALTER TABLE objetos ADD COLUMN IF NOT EXISTS lon            DOUBLE PRECISION;
 ALTER TABLE objetos ADD COLUMN IF NOT EXISTS estilo_cultura_source TEXT NOT NULL DEFAULT 'legacy';
 ALTER TABLE objetos ADD COLUMN IF NOT EXISTS lugar_origen_source   TEXT NOT NULL DEFAULT 'legacy';
+ALTER TABLE objetos ADD COLUMN IF NOT EXISTS descripcion        TEXT;
 
 UPDATE objetos
 SET estilo_cultura_source = COALESCE(estilo_cultura_source, 'legacy'),
