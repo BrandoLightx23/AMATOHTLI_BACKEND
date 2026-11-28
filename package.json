@@ -14,6 +14,8 @@
     "upload-cloudinary": "node scripts/uploadToCloudinary.js",
     "sync-aiven": "node scripts/syncToAiven.js",
     "migrate-colecciones": "node scripts/migrate-colecciones.js",
+    "migrate-translations": "node scripts/migrate-translations.js",
+    "translate-objects": "node scripts/translate-objects.js",
     "sync-commons": "node scripts/sync-commons.js",
     "audit-cultures": "node scripts/audit-cultures.js"
   },

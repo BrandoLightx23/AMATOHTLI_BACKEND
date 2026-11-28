@@ -127,23 +127,36 @@ exports.inicio = (req, res) => {
 };
 
 // Helper para mapear una fila a objeto JSON consistente
-function mapRowToObject(f) {
+function mapRowToObject(f, idioma = 'es') {
   const country = getCountryFromRegion(f.lugar_origen, f.estilo_cultura);
   const parsedYear = f.fecha ? CAST_YEAR_NATIVO(f.fecha) : null;
   const coordinates = (f.lat != null && f.lon != null)
     ? [Number(f.lon), Number(f.lat)]
     : getCoordinatesForRegion(f.lugar_origen, f.estilo_cultura);
+  const translatedFields = ['en', 'es'].includes(idioma) ? f.translated_fields || {} : {};
+  const localized = (field, source) =>
+    typeof translatedFields[field] === 'string' ? translatedFields[field] : source;
+  const titulo = localized('titulo', f.titulo);
+  const material = localized('material_tecnica', f.material_tecnica);
+  const tipoObjeto = localized('tipo_objeto', f.tipo_objeto);
+  const dimensiones = localized('dimensiones', f.dimensiones);
+  const inventario = f.numero_inventario;
+  const descripcionOriginal = localized('descripcion', f.descripcion);
+  const descripcion = descripcionOriginal || (idioma === 'en'
+    ? `Culture: ${f.estilo_cultura || 'Unknown'}. Material/Technique: ${material || 'N/A'}. Dimensions: ${dimensiones || 'N/A'}. Inventory: ${inventario || 'N/A'}. Artist: ${f.autor || 'Unknown'}`
+    : `Cultura: ${f.estilo_cultura || 'Desconocida'}. Material/Técnica: ${material || 'N/A'}. Dimensiones: ${dimensiones || 'N/A'}. Inventario: ${inventario || 'N/A'}. Autor: ${f.autor || 'Desconocido'}`);
   return {
     id: f.id,
-    titulo: f.titulo || 'Sin título',
-    wikiTitle: f.numero_inventario || '',
+    coleccion_id: f.coleccion_id ?? null,
+    titulo: titulo || (idioma === 'en' ? 'Untitled' : 'Sin título'),
+    wikiTitle: inventario || '',
     url: f.imagen_url,                  // URL Wikimedia original (respaldo)
     localImage: f.imagen_local || null, // Ruta local: /images/2025.385.jpg
     thumbnail: f.thumbnail_local || f.thumb_url || null, // Thumbnail local o de Commons (800px)
     year: parsedYear,
     yearRaw: f.fecha,
     region: f.lugar_origen ? (country && country !== 'Desconocido' ? `${f.lugar_origen}, ${country}` : f.lugar_origen) : (country || 'Desconocido'),
-    descripcion: `Cultura: ${f.estilo_cultura || 'Desconocida'}. Material/Técnica: ${f.material_tecnica || 'N/A'}. Dimensiones: ${f.dimensiones || 'N/A'}. Inventario: ${f.numero_inventario || 'N/A'}. Autor: ${f.autor || 'Desconocido'}`,
+    descripcion,
     coordinates,
     
     // Metadatos individuales unificados
@@ -152,28 +165,59 @@ function mapRowToObject(f) {
     pais: country,
     estilo_cultura: f.estilo_cultura || 'Desconocida',
     fecha: f.fecha || '',
-    tipo_objeto: f.tipo_objeto || '',
-    material_tecnica: f.material_tecnica || 'N/A',
-    numero_inventario: f.numero_inventario || 'N/A',
-    dimensiones: f.dimensiones || 'N/A',
+    tipo_objeto: tipoObjeto || '',
+    material_tecnica: material || 'N/A',
+    numero_inventario: inventario || 'N/A',
+    otras_denominaciones: localized('otras_denominaciones', f.otras_denominaciones) || '',
+    dimensiones: dimensiones || 'N/A',
     creditos: f.creditos || ''
   };
 }
+
+// ------------------------------------------------------------
+// LISTAR COLECCIONES
+// ------------------------------------------------------------
+exports.obtenerColecciones = async (req, res) => {
+  try {
+    const idioma = req.query.idioma === 'en' ? 'en' : 'es';
+    const query = `
+      SELECT c.id, COALESCE(t.nombre, c.nombre) AS nombre, c.slug,
+             COUNT(o.id)::int AS total
+      FROM colecciones c
+      LEFT JOIN objetos o ON o.coleccion_id = c.id
+      LEFT JOIN coleccion_traducciones t
+        ON t.coleccion_id = c.id AND t.idioma = $1
+      GROUP BY c.id, c.nombre, c.slug, t.nombre
+      HAVING COUNT(o.id) > 0
+      ORDER BY c.id
+    `;
+    const { rows: colecciones } = await pool.query(query, [idioma]);
+    res.json({ total: colecciones.length, colecciones });
+  } catch (e) {
+    console.error('Error al consultar colecciones:', e);
+    res.status(500).json({ message: 'Error al obtener las colecciones desde SQL' });
+  }
+};
 
 // ------------------------------------------------------------
 // 1. OBTENER TODOS
 // ------------------------------------------------------------
 exports.obtenerTodos = async (req, res) => {
   try {
+    const idioma = req.query.idioma === 'en' ? 'en' : 'es';
     const query = `
-      SELECT id, url_objeto, titulo, autor, lugar_origen, estilo_cultura, fecha, 
-             tipo_objeto, material_tecnica, numero_inventario, dimensiones, creditos, 
-             otras_denominaciones, imagen_url, imagen_local, thumbnail_local, thumb_url, lat, lon
-      FROM objetos
+      SELECT o.id, o.coleccion_id, o.url_objeto, o.titulo, o.autor, o.lugar_origen,
+             o.estilo_cultura, o.fecha, o.tipo_objeto, o.material_tecnica,
+             o.numero_inventario, o.dimensiones, o.creditos, o.otras_denominaciones,
+             o.descripcion, o.imagen_url, o.imagen_local, o.thumbnail_local,
+             o.thumb_url, o.lat, o.lon, t.campos AS translated_fields
+      FROM objetos o
+      LEFT JOIN objeto_traducciones t
+        ON t.objeto_id = o.id AND t.idioma = $1
     `;
-    const { rows: filas } = await pool.query(query);
+    const { rows: filas } = await pool.query(query, [idioma]);
 
-    const archivos = filas.map(mapRowToObject);
+    const archivos = filas.map(fila => mapRowToObject(fila, idioma));
 
     res.json({ 
       categoria: "Anne-Marie und Caspar Reinhart Collection at Museum Rietberg, Zürich", 
