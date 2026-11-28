@@ -652,7 +652,7 @@ function parseFilenameMetadata(title) {
   }
   // Cultura
   const normalized = name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  const cultureRe = /\b(lambayeque|sican|nazca|nasca|inca|calima|yotoco|valdivia|cocle|moche|chavin|maya|aztec|olmec|zapotec|mixtec|toltec|teotihuacan|wari|tiahuanaco|tiwanaku|chimu|paracas)\b/i;
+  const cultureRe = /\b(lambayeque|sican|nazca|nasca|inca|calima|yotoco|valdivia|cocle|moche|chavin|maya|aztec|olmec|zapotec|mixtec|toltec|teotihuacan|wari|tiahuanaco|tiwanaku|chimu|paracas|pachacamac|huastec|huaxtec)\b/i;
   const cm = normalized.match(cultureRe);
   if (cm) out.estilo_cultura = cm[1][0].toUpperCase() + cm[1].slice(1);
   // Material
@@ -663,12 +663,15 @@ function parseFilenameMetadata(title) {
   else if (/jade|jadeite/i.test(name)) out.material_tecnica = 'Jade';
   else if (/ceramic|cerámica|terracotta/i.test(name)) out.material_tecnica = 'Ceramic';
   else if (/stone|piedra|basalt/i.test(name)) out.material_tecnica = 'Stone';
+  else if (/tessil|textil/i.test(name)) out.material_tecnica = 'Textile';
   // Lugar: primer segmento si es país/región
   const firstSeg = name.split(',')[0].trim();
   if (/^(ecuador|colombia|panama|panamá|peru|perú|mexico|méxico|guatemala|honduras|costa rica|bolivia|chile|venezuela)\b/i.test(firstSeg)) out.lugar_origen = firstSeg;
   else if (/costa del nord|north coast/i.test(name)) out.lugar_origen = 'Peru, North Coast';
   else if (/costa del sud|south coast/i.test(name)) out.lugar_origen = 'Peru, South Coast';
   else if (/ande centrali|central andes/i.test(name)) out.lugar_origen = 'Central Andes';
+  else if (/\bmessico\b/i.test(name)) out.lugar_origen = 'Mexico';
+  else if (/\bpachacamac\b/i.test(name)) out.lugar_origen = 'Peru';
   return out;
 }
 
@@ -677,11 +680,15 @@ function parseCategories(wikitext) {
   if (!wikitext) return {};
   const cats = [...wikitext.matchAll(/\[\[Category:([^\]|]+)/gi)].map(m => m[1].trim());
   const out = {};
-  const cultureRe = /\b(Lambayeque|Sicán|Sican|Nazca|Nasca|Inca|Calima|Yotoco|Valdivia|Coclé|Cocle|Moche|Chavin|Chavín|Maya|Aztec|Olmec|Zapotec|Mixtec|Toltec|Teotihuacan|Wari|Tiahuanaco|Tiwanaku|Chimu|Chimú|Nicoya|Colima|Michoacán|Michoacan|Paracas)\b/i;
+  const cultureRe = /\b(Lambayeque|Sicán|Sican|Nazca|Nasca|Inca|Calima|Yotoco|Valdivia|Coclé|Cocle|Moche|Chavin|Chavín|Maya|Aztec|Olmec|Zapotec|Mixtec|Toltec|Teotihuacan|Wari|Tiahuanaco|Tiwanaku|Chimu|Chimú|Nicoya|Colima|Michoacán|Michoacan|Paracas|Pachacamac|Huastec|Huaxtec)\b/i;
   for (const c of cats) {
     if (!out.estilo_cultura) {
       const m = c.match(cultureRe);
       if (m) out.estilo_cultura = m[1];
+    }
+    if (!out.lugar_origen) {
+      const pm = c.match(/^Pre-Columbian art of (.+)$/i);
+      if (pm) out.lugar_origen = pm[1].trim();
     }
     if (!out.material_tecnica) {
       if (/gold|oro|golden/i.test(c)) out.material_tecnica = 'Gold';
@@ -690,6 +697,7 @@ function parseCategories(wikitext) {
       else if (/jade/i.test(c)) out.material_tecnica = 'Jade';
       else if (/ceramic|terracotta|earthenware/i.test(c)) out.material_tecnica = 'Ceramic';
       else if (/basalt|stone/i.test(c)) out.material_tecnica = 'Stone';
+      else if (/textile/i.test(c)) out.material_tecnica = 'Textile';
     }
   }
   return out;
