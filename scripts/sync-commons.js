@@ -181,6 +181,7 @@ async function enrichBatch(titles) {
       height: info.height ?? null,
       mime: info.mime || null,
       wikidataQid: qMatch ? qMatch[1].toUpperCase() : null,
+      wikitext,
     };
   });
 }
@@ -321,6 +322,238 @@ async function enrichWithWikidata(items) {
       dimensiones: extractDimensions(ent),
       url_objeto,
     };
+  });
+}
+
+
+// ── 2c. Metadatos desde la plantilla {{Artwork}} de Commons ────────────────
+// Birmingham/Cleveland no tienen ítem Wikidata, pero sí ficha rica en el
+// wikitexto (title, description, date, medium, dimensions, place of creation,
+// accession number, source, credit line...). Aquí se parsea sin dependencias.
+
+/** Extrae el bloque {{Artwork ... }} respetando anidamiento {{ }}. */
+function extractArtworkBlock(wikitext) {
+  if (!wikitext) return null;
+  const start = wikitext.search(/\{\{\s*Artwork\b/i);
+  if (start < 0) return null;
+  let depth = 0;
+  for (let i = start; i < wikitext.length - 1; i++) {
+    if (wikitext[i] === '{' && wikitext[i + 1] === '{') { depth++; i++; }
+    else if (wikitext[i] === '}' && wikitext[i + 1] === '}') {
+      depth--; i++;
+      if (depth === 0) return wikitext.slice(start, i + 1);
+    }
+  }
+  return null;
+}
+
+/** Divide por un separador solo en profundidad 0 (fuera de {{ }} y [[ ]]). */
+function splitTopLevel(str, sep) {
+  const parts = [];
+  let depthT = 0, depthL = 0, cur = '';
+  for (let i = 0; i < str.length; i++) {
+    const two = str.slice(i, i + 2);
+    if (two === '{{') { depthT++; cur += two; i++; continue; }
+    if (two === '}}') { depthT = Math.max(0, depthT - 1); cur += two; i++; continue; }
+    if (two === '[[') { depthL++; cur += two; i++; continue; }
+    if (two === ']]') { depthL = Math.max(0, depthL - 1); cur += two; i++; continue; }
+    if (str[i] === sep && depthT === 0 && depthL === 0) { parts.push(cur); cur = ''; continue; }
+    cur += str[i];
+  }
+  parts.push(cur);
+  return parts;
+}
+
+/** Primer '=' en profundidad 0, o -1. */
+function indexOfTopLevelEquals(str) {
+  let depthT = 0, depthL = 0;
+  for (let i = 0; i < str.length; i++) {
+    const two = str.slice(i, i + 2);
+    if (two === '{{') { depthT++; i++; continue; }
+    if (two === '}}') { depthT = Math.max(0, depthT - 1); i++; continue; }
+    if (two === '[[') { depthL++; i++; continue; }
+    if (two === ']]') { depthL = Math.max(0, depthL - 1); i++; continue; }
+    if (str[i] === '=' && depthT === 0 && depthL === 0) return i;
+  }
+  return -1;
+}
+
+/** Devuelve los parámetros de una plantilla como mapa { clave: valorCrudo }. */
+function parseTemplateParams(block) {
+  const inner = block.replace(/^\{\{\s*Artwork\b/i, '').replace(/\}\}\s*$/, '');
+  const params = {};
+  for (const part of splitTopLevel(inner, '|')) {
+    const eq = indexOfTopLevelEquals(part);
+    if (eq < 0) continue;
+    const key = part.slice(0, eq).trim().toLowerCase();
+    const value = part.slice(eq + 1).trim();
+    if (key) params[key] = value;
+  }
+  return params;
+}
+
+/** Quita comentarios HTML y colapsa espacios. */
+function stripComments(s) {
+  return (s || '').replace(/<!--[\s\S]*?-->/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+/** Texto plano de un valor wikitexto: resuelve plantillas comunes y enlaces. */
+function cleanWikiValue(raw) {
+  if (!raw) return null;
+  let s = stripComments(raw);
+  // {{en|1=...}} / {{en|...}} → contenido
+  s = s.replace(/\{\{\s*en\s*\|[^}]*?\}\}/gi, (m) => {
+    const inner = m.replace(/^\{\{\s*en\s*\|/i, '').replace(/\}\}$/, '');
+    const eq = inner.indexOf('=');
+    return eq >= 0 ? inner.slice(eq + 1) : inner;
+  });
+  // {{other date|circa|750}} → "circa 750"
+  s = s.replace(/\{\{\s*other date\s*\|([^}]*)\}\}/gi, (_, inner) => inner.split('|').map(x => x.trim()).join(' '));
+  // {{size|in|9.5|3.25|2.5}} → "9.5 × 3.25 × 2.5 in"
+  s = s.replace(/\{\{\s*size\s*\|([^}]*)\}\}/gi, (_, inner) => {
+    const p = inner.split('|').map(x => x.trim());
+    const unit = p[0] || '';
+    return p.slice(1).join(' × ') + (unit ? ` ${unit}` : '');
+  });
+  // {{Technique|low relief|Limestone}} → "Limestone, low relief"
+  s = s.replace(/\{\{\s*Technique\s*\|([^}]*)\}\}/gi, (_, inner) => {
+    const p = inner.split('|').map(x => x.trim()).filter(Boolean);
+    return p.length > 1 ? `${p[p.length - 1]}, ${p.slice(0, -1).join(', ')}` : (p[0] || '');
+  });
+  // {{institution:Cleveland Museum of Art}} → "Cleveland Museum of Art"
+  s = s.replace(/\{\{\s*institution\s*:\s*([^}]*)\}\}/gi, (_, inner) => inner.trim());
+  // {{cite ...}} y otras plantillas → quitar
+  s = s.replace(/\{\{[^{}]*\}\}/g, ' ');
+  // [[Archivo:...]] / [[File:...]] → quitar
+  s = s.replace(/\[\[\s*(?:File|Archivo|Image|Imagen)\s*:[^\]]*\]\]/gi, ' ');
+  // [[destino|texto]] → texto ; [[destino]] → destino
+  s = s.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2').replace(/\[\[([^\]]+)\]\]/g, '$1');
+  // enlaces externos [http://... texto] → texto
+  s = s.replace(/\[https?:\/\/[^\s\]]+\s+([^\]]+)\]/g, '$1').replace(/\[https?:\/\/[^\]]+\]/g, ' ');
+  // negritas/cursivas
+  s = s.replace(/'{2,}/g, '');
+  s = stripComments(s);
+  return s || null;
+}
+
+/** Normaliza una fecha de Artwork a texto legible con era. */
+function parseArtworkDate(raw) {
+  if (!raw) return null;
+  const cleaned = cleanWikiValue(raw);
+  if (!cleaned) return null;
+  const m = cleaned.match(/(\d{1,4})/);
+  if (!m) return cleaned;
+  const year = parseInt(m[1], 10);
+  const era = /bce|bc\b|a\.?\s*c\.?/i.test(cleaned) ? 'a. C.' : 'd. C.';
+  const circa = /circa|ca\.?|c\./i.test(cleaned) ? 'circa ' : '';
+  return `${circa}${year} ${era}`;
+}
+
+/** Normaliza dimensiones; convierte pulgadas a cm si viene {{size|in|...}}. */
+function parseArtworkDimensions(raw) {
+  if (!raw) return null;
+  const sizeMatch = raw.match(/\{\{\s*size\s*\|\s*(in|cm|mm|m)\s*\|([^}]*)\}\}/i);
+  if (sizeMatch) {
+    const unit = sizeMatch[1].toLowerCase();
+    const nums = sizeMatch[2].split('|').map(x => parseFloat(x.trim())).filter(n => !Number.isNaN(n));
+    if (!nums.length) return null;
+    const factor = unit === 'in' ? 2.54 : unit === 'mm' ? 0.1 : unit === 'm' ? 100 : 1;
+    const converted = nums.map(n => Math.round(n * factor * 100) / 100);
+    return `${converted.join(' × ')} cm`;
+  }
+  return cleanWikiValue(raw);
+}
+
+/** Extrae lugar/cultura/periodo de "place of creation" o de la descripción. */
+function parsePlaceAndCulture(placeRaw, description) {
+  let lugar = null;
+  let cultura = null;
+  const place = placeRaw ? cleanWikiValue(placeRaw) : null;
+  if (place) {
+    const segments = place.split(',').map(x => x.trim()).filter(Boolean);
+    const kept = [];
+    for (const seg of segments) {
+      if (/maya/i.test(seg)) { cultura = 'Maya'; continue; }
+      if (/style|period|classic|postclassic|preclassic|formative/i.test(seg)) continue;
+      if (/^\d{2,4}\s*[-–—]\s*\d{2,4}$/.test(seg) || /^\d{2,4}$/.test(seg)) continue;
+      kept.push(seg);
+    }
+    if (kept.length) lugar = kept.join(', ');
+  }
+  if (!cultura && description && /maya/i.test(description)) cultura = 'Maya';
+  if (!lugar && description) {
+    const matches = [...description.matchAll(/from\s+([^.]+?)(?:\.|$)/gi)];
+    if (matches.length) lugar = matches[matches.length - 1][1].trim();
+  }
+  return { lugar, cultura };
+}
+
+/** Parsea la ficha {{Artwork}} de un wikitexto; null si no hay plantilla. */
+function parseArtwork(wikitext) {
+  const block = extractArtworkBlock(wikitext);
+  if (!block) return null;
+  const p = parseTemplateParams(block);
+  const get = (k) => (p[k] !== undefined && p[k] !== '' ? p[k] : null);
+
+  const description = cleanWikiValue(get('description'));
+  const title = cleanWikiValue(get('title'));
+  const date = parseArtworkDate(get('date'));
+  const medium = cleanWikiValue(get('medium'));
+  const dimensions = parseArtworkDimensions(get('dimensions'));
+  const institution = cleanWikiValue(get('institution'));
+  const creditLine = cleanWikiValue(get('credit line'));
+  const accession = cleanWikiValue(get('accession number'));
+  const sourceRaw = get('source');
+  const sourceUrl = (() => {
+    if (!sourceRaw) return null;
+    const m = sourceRaw.match(/https?:\/\/[^\s\]]+/);
+    return m ? m[0] : null;
+  })();
+  const sourceName = sourceUrl ? null : cleanWikiValue(sourceRaw);
+  const author = cleanWikiValue(get('artist') || get('author'));
+  const { lugar, cultura } = parsePlaceAndCulture(get('place of creation'), description);
+
+  return {
+    titulo: title || null,
+    descripcion: description || null,
+    fecha: date,
+    material_tecnica: medium,
+    dimensiones: dimensions,
+    creditos: creditLine || institution || sourceName || null,
+    autor: author,
+    numero_inventario: accession && /^\d{4}\.\d+(?:\.\d+)?$/.test(accession) ? accession : (accession || null),
+    url_objeto: sourceUrl,
+    lugar_origen: lugar,
+    estilo_cultura: cultura,
+    tipo_objeto: cleanWikiValue(get('department')) || null,
+  };
+}
+
+/** Enriquece cada item con su ficha {{Artwork}} sin pisar datos de Wikidata. */
+function enrichWithCommonsArtwork(items) {
+  return items.map(item => {
+    const art = parseArtwork(item.wikitext);
+    if (!art) return item;
+    const merged = { ...item };
+    const fill = (key, value, sourceKey) => {
+      if (value && !merged[key]) {
+        merged[key] = value;
+        if (sourceKey) merged[sourceKey] = 'commons';
+      }
+    };
+    fill('titulo', art.titulo);
+    fill('descripcion', art.descripcion);
+    fill('fecha', art.fecha);
+    fill('material_tecnica', art.material_tecnica);
+    fill('dimensiones', art.dimensiones);
+    fill('creditos', art.creditos);
+    fill('autor', art.autor);
+    fill('numero_inventario', art.numero_inventario);
+    fill('url_objeto', art.url_objeto);
+    fill('lugar_origen', art.lugar_origen, 'lugar_origen_source');
+    fill('estilo_cultura', art.estilo_cultura, 'estilo_cultura_source');
+    // tipo_objeto solo si viene de Wikidata; el department no es tipo de objeto útil
+    return merged;
   });
 }
 
@@ -483,8 +716,8 @@ async function saveObject(pool, coleccionId, item) {
            imagen_url, numero_inventario, titulo, dimensiones,
            image_width, image_height, mime, lugar_origen, estilo_cultura,
            fecha, tipo_objeto, material_tecnica, url_objeto, lat, lon,
-           estilo_cultura_source, lugar_origen_source
-         ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, 'wikidata', 'wikidata')`,
+           estilo_cultura_source, lugar_origen_source, descripcion
+         ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22)`,
         [
           coleccionId,
           item.title,
@@ -505,6 +738,9 @@ async function saveObject(pool, coleccionId, item) {
           item.url_objeto ?? null,
           item.lat ?? null,
           item.lon ?? null,
+          item.estilo_cultura_source || 'wikidata',
+          item.lugar_origen_source || 'wikidata',
+          item.descripcion ?? null,
         ]
       );
       await client.query('COMMIT');
@@ -524,14 +760,15 @@ async function saveObject(pool, coleccionId, item) {
          image_height = COALESCE($10::integer, image_height),
          mime = COALESCE($11::text, mime),
          dimensiones = COALESCE($12::varchar, dimensiones),
-         lugar_origen = CASE WHEN lugar_origen_source = 'wikidata' THEN $13::varchar ELSE lugar_origen END,
-         estilo_cultura = CASE WHEN estilo_cultura_source = 'wikidata' THEN $14::varchar ELSE estilo_cultura END,
+         lugar_origen = CASE WHEN lugar_origen_source IN ('wikidata', 'commons') THEN $13::varchar ELSE lugar_origen END,
+         estilo_cultura = CASE WHEN estilo_cultura_source IN ('wikidata', 'commons') THEN $14::varchar ELSE estilo_cultura END,
          fecha = COALESCE($15::varchar, fecha),
          tipo_objeto = COALESCE($16::varchar, tipo_objeto),
          material_tecnica = COALESCE($17::text, material_tecnica),
          url_objeto = COALESCE($18::text, url_objeto),
          lat = COALESCE($19::double precision, lat),
-         lon = COALESCE($20::double precision, lon)
+         lon = COALESCE($20::double precision, lon),
+         descripcion = COALESCE(descripcion, $21::text)
        WHERE id = $1 AND (
          commons_title IS DISTINCT FROM $2::text
          OR ($3::boolean AND titulo IS DISTINCT FROM $8::varchar)
@@ -543,14 +780,15 @@ async function saveObject(pool, coleccionId, item) {
          OR ($10::integer IS NOT NULL AND image_height IS DISTINCT FROM $10::integer)
          OR ($11::text IS NOT NULL AND mime IS DISTINCT FROM $11::text)
          OR ($12::varchar IS NOT NULL AND dimensiones IS DISTINCT FROM $12::varchar)
-         OR (lugar_origen_source = 'wikidata' AND lugar_origen IS DISTINCT FROM $13::varchar)
-         OR (estilo_cultura_source = 'wikidata' AND estilo_cultura IS DISTINCT FROM $14::varchar)
+         OR (lugar_origen_source IN ('wikidata', 'commons') AND lugar_origen IS DISTINCT FROM $13::varchar)
+         OR (estilo_cultura_source IN ('wikidata', 'commons') AND estilo_cultura IS DISTINCT FROM $14::varchar)
          OR ($15::varchar IS NOT NULL AND fecha IS DISTINCT FROM $15::varchar)
          OR ($16::varchar IS NOT NULL AND tipo_objeto IS DISTINCT FROM $16::varchar)
          OR ($17::text IS NOT NULL AND material_tecnica IS DISTINCT FROM $17::text)
          OR ($18::text IS NOT NULL AND url_objeto IS DISTINCT FROM $18::text)
          OR ($19::double precision IS NOT NULL AND lat IS DISTINCT FROM $19::double precision)
          OR ($20::double precision IS NOT NULL AND lon IS DISTINCT FROM $20::double precision)
+         OR ($21::text IS NOT NULL AND descripcion IS DISTINCT FROM $21::text)
        )
        RETURNING id`,
       [
@@ -574,6 +812,7 @@ async function saveObject(pool, coleccionId, item) {
         item.url_objeto ?? null,
         item.lat ?? null,
         item.lon ?? null,
+        item.descripcion ?? null,
       ]
     );
 
@@ -622,7 +861,8 @@ async function main() {
   console.log(`   ${rawWithImage.length}/${enriched.length} con imagen disponible.`);
 
   console.log('\n2b/3 Enriqueciendo metadatos y coordenadas desde Wikidata...');
-  const withImage = await enrichWithWikidata(rawWithImage);
+  const withWikidata = await enrichWithWikidata(rawWithImage);
+  const withImage = enrichWithCommonsArtwork(withWikidata);
   const conLugar = withImage.filter(e => e.lugar_origen).length;
   const conCoords = withImage.filter(e => e.lat != null && e.lon != null).length;
   console.log(`   ${conLugar}/${withImage.length} con lugar_origen, ${conCoords}/${withImage.length} con coordenadas.`);
@@ -693,6 +933,8 @@ module.exports = {
   BATCH_SIZE,
   chunk,
   deduplicateByAccession,
+  enrichWithCommonsArtwork,
+  parseArtwork,
   extractAccession,
   isCroppedOrDetail,
   cleanTitle,
