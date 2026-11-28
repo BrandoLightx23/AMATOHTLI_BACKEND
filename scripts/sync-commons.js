@@ -1045,6 +1045,13 @@ async function main() {
   }
   const deduped = kept;
 
+  // Reportar archivos sin ficha de objeto (p. ej. fotos de sala/museo en Met)
+  const sinFicha = deduped.filter(e => !e.titulo && !e.descripcion && !e.numero_inventario);
+  if (sinFicha.length) {
+    console.log(`\n⚠️ ${sinFicha.length} archivos sin ficha de objeto (sin título/descripción/accession) — revisar antes de sincronizar:`);
+    for (const e of sinFicha) console.log(`   - ${e.title}`);
+  }
+
   if (dryRun) {
     console.log('\n3/3 Dry-run terminado. Primeras 5 piezas:');
     deduped.slice(0, 5).forEach(e => {
