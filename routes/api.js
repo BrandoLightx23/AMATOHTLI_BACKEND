@@ -5,6 +5,7 @@ const APIVIEW = require('../views/api-view');
 router.get('/', APIVIEW.inicio);
 router.get('/colecciones', APIVIEW.obtenerColecciones);
 router.get('/objects', APIVIEW.obtenerTodos);
+router.get('/filters', APIVIEW.obtenerFiltros);
 router.get('/objects/anio/:year', APIVIEW.obtenerPorAnio);
 router.get('/objects/desconocidos', APIVIEW.obtenerDesconocidos);
 router.get('/objects/buscar', APIVIEW.buscar);
