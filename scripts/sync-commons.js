@@ -506,7 +506,7 @@ function parsePlaceAndCulture(placeRaw, description) {
     const kept = [];
     for (const seg of segments) {
       if (/maya/i.test(seg)) { cultura = 'Maya'; continue; }
-      const knownCulture = seg.match(/\b(Olmec|Aztec|Mexica|Inca|Incan|Chavin|Chavín|Valdivia|Moche|Nazca|Nasca|Wari|Tiahuanaco|Tiwanaku|Teotihuacan|Toltec|Zapotec|Mixtec|Mixteca|Chimu|Chimú|Sican|Sicán|Lambayeque|Conte|Chocholá|Chochola|Jaina|Coclé|Cocle|Nicoya|Colima|Michoacán|Michoacan|Punuk|Mezcala|Mississippian|Micmac|Calima|Yotoco|Sinú|Sinu|Chimú|Chimu)\b/i);
+      const knownCulture = seg.match(/\b(Olmec|Aztec|Mexica|Inca|Incan|Chavin|Chavín|Valdivia|Moche|Nazca|Nasca|Wari|Tiahuanaco|Tiwanaku|Teotihuacan|Toltec|Zapotec|Mixtec|Mixteca|Chimu|Chimú|Sican|Sicán|Lambayeque|Conte|Chocholá|Chochola|Jaina|Coclé|Cocle|Nicoya|Colima|Michoacán|Michoacan|Punuk|Mezcala|Mississippian|Micmac|Calima|Yotoco|Sinú|Sinu|Chimú|Chimu|Paracas)\b/i);
       if (knownCulture) { cultura = knownCulture[1]; continue; }
       const styleMatch = seg.match(/^(.+?)\s+style$/i);
       if (styleMatch) { cultura = styleMatch[1].trim(); continue; }
@@ -652,7 +652,7 @@ function parseFilenameMetadata(title) {
   }
   // Cultura
   const normalized = name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  const cultureRe = /\b(lambayeque|sican|nazca|nasca|inca|calima|yotoco|valdivia|cocle|moche|chavin|maya|aztec|olmec|zapotec|mixtec|toltec|teotihuacan|wari|tiahuanaco|tiwanaku|chimu)\b/i;
+  const cultureRe = /\b(lambayeque|sican|nazca|nasca|inca|calima|yotoco|valdivia|cocle|moche|chavin|maya|aztec|olmec|zapotec|mixtec|toltec|teotihuacan|wari|tiahuanaco|tiwanaku|chimu|paracas)\b/i;
   const cm = normalized.match(cultureRe);
   if (cm) out.estilo_cultura = cm[1][0].toUpperCase() + cm[1].slice(1);
   // Material
@@ -677,7 +677,7 @@ function parseCategories(wikitext) {
   if (!wikitext) return {};
   const cats = [...wikitext.matchAll(/\[\[Category:([^\]|]+)/gi)].map(m => m[1].trim());
   const out = {};
-  const cultureRe = /\b(Lambayeque|Sicán|Sican|Nazca|Nasca|Inca|Calima|Yotoco|Valdivia|Coclé|Cocle|Moche|Chavin|Chavín|Maya|Aztec|Olmec|Zapotec|Mixtec|Toltec|Teotihuacan|Wari|Tiahuanaco|Tiwanaku|Chimu|Chimú|Nicoya|Colima|Michoacán|Michoacan)\b/i;
+  const cultureRe = /\b(Lambayeque|Sicán|Sican|Nazca|Nasca|Inca|Calima|Yotoco|Valdivia|Coclé|Cocle|Moche|Chavin|Chavín|Maya|Aztec|Olmec|Zapotec|Mixtec|Toltec|Teotihuacan|Wari|Tiahuanaco|Tiwanaku|Chimu|Chimú|Nicoya|Colima|Michoacán|Michoacan|Paracas)\b/i;
   for (const c of cats) {
     if (!out.estilo_cultura) {
       const m = c.match(cultureRe);
@@ -742,7 +742,7 @@ function parseInformation(wikitext) {
       }
       continue;
     }
-    if (!out.lugar_origen && /,/.test(line) && /mexico|guerrero|olmec|maya|aztec|inca|peru|ecuador|guatemala|honduras|belize/i.test(line)) {
+    if (!out.lugar_origen && line.length < 120 && /,/.test(line) && /mexico|guerrero|olmec|maya|aztec|inca|peru|ecuador|guatemala|honduras|belize/i.test(line)) {
       const { lugar, cultura } = parsePlaceAndCulture(line, description);
       out.lugar_origen = lugar || line;
       out.estilo_cultura = cultura;
@@ -868,6 +868,10 @@ function enrichWithCommonsArtwork(items) {
     fill('lugar_origen', art.lugar_origen, 'lugar_origen_source');
     fill('estilo_cultura', art.estilo_cultura, 'estilo_cultura_source');
     fill('tipo_objeto', art.tipo_objeto);
+    // Seguridad: campos varchar(255) no deben desbordar la BD
+    for (const k of ['titulo','lugar_origen','estilo_cultura','fecha','tipo_objeto','material_tecnica','dimensiones','creditos','numero_inventario','url_objeto']) {
+      if (typeof merged[k] === 'string' && merged[k].length > 255) merged[k] = merged[k].slice(0, 255);
+    }
     return merged;
   });
 }
