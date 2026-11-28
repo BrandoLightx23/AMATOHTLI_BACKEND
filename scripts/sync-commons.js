@@ -407,8 +407,15 @@ function cleanWikiValue(raw) {
     const eq = inner.indexOf('=');
     return eq >= 0 ? inner.slice(eq + 1) : inner;
   });
-  // {{other date|circa|750}} → "circa 750"
-  s = s.replace(/\{\{\s*other date\s*\|([^}]*)\}\}/gi, (_, inner) => inner.split('|').map(x => x.trim()).join(' '));
+  // {{other date|circa|750}} → "circa 750" ; {{other date|~|400|900}} → "circa 400-900"
+  s = s.replace(/\{\{\s*other date\s*\|([^}]*)\}\}/gi, (_, inner) => {
+    const parts = inner.split('|').map(x => x.trim()).filter(Boolean);
+    const nums = parts.filter(x => /^\d{1,4}$/.test(x));
+    const words = parts.filter(x => !/^\d{1,4}$/.test(x));
+    const prefix = words.join(' ').replace(/^~$/, 'circa').replace(/^c\.?$/i, 'circa');
+    if (nums.length >= 2) return `${prefix} ${nums[0]}-${nums[1]}`.trim();
+    return [...words, ...nums].join(' ');
+  });
   // {{size|in|9.5|3.25|2.5}} → "9.5 × 3.25 × 2.5 in"
   s = s.replace(/\{\{\s*size\s*\|([^}]*)\}\}/gi, (_, inner) => {
     const p = inner.split('|').map(x => x.trim());
@@ -441,10 +448,19 @@ function parseArtworkDate(raw) {
   if (!raw) return null;
   const cleaned = cleanWikiValue(raw);
   if (!cleaned) return null;
+  // Rangos y fechas textuales: conservar tal cual (con era traducida si es simple)
+  if (/millennium|century|\bcentury\b/i.test(cleaned)) return cleaned;
+  const range = cleaned.match(/(\d{1,4})\s*[-–—]\s*(\d{1,4})\s*(B\.?C\.?|BCE|A\.?D\.?|CE)?/i);
+  if (range && /[-–—]/.test(cleaned)) {
+    const eraRaw = (range[3] || '').toUpperCase().replace(/[\.\s]/g, '');
+    const era = /BC|BCE/.test(eraRaw) ? 'a. C.' : /AD|CE/.test(eraRaw) ? 'd. C.' : '';
+    return era ? `${range[1]}–${range[2]} ${era}` : `${range[1]}–${range[2]}`;
+  }
   const m = cleaned.match(/(\d{1,4})/);
   if (!m) return cleaned;
   const year = parseInt(m[1], 10);
-  const era = /bce|bc\b|a\.?\s*c\.?/i.test(cleaned) ? 'a. C.' : 'd. C.';
+  const isBC = /b\.?\s*c\.?|bce/i.test(cleaned);
+  const era = isBC ? 'a. C.' : 'd. C.';
   const circa = /circa|ca\.?|c\./i.test(cleaned) ? 'circa ' : '';
   return `${circa}${year} ${era}`;
 }
@@ -474,13 +490,23 @@ function parsePlaceAndCulture(placeRaw, description) {
     const kept = [];
     for (const seg of segments) {
       if (/maya/i.test(seg)) { cultura = 'Maya'; continue; }
-      if (/style|period|classic|postclassic|preclassic|formative/i.test(seg)) continue;
+      const knownCulture = seg.match(/\b(Olmec|Aztec|Mexica|Inca|Incan|Chavin|Chavín|Valdivia|Moche|Nazca|Nasca|Wari|Tiahuanaco|Tiwanaku|Teotihuacan|Toltec|Zapotec|Mixtec|Mixteca|Chimu|Chimú|Sican|Sicán|Lambayeque|Conte|Chocholá|Chochola|Jaina)\b/i);
+      if (knownCulture) { cultura = knownCulture[1]; continue; }
+      const styleMatch = seg.match(/^(.+?)\s+style$/i);
+      if (styleMatch) { cultura = styleMatch[1].trim(); continue; }
+      if (/style|period|classic|postclassic|preclassic|formative|century/i.test(seg)) continue;
       if (/^\d{2,4}\s*[-–—]\s*\d{2,4}$/.test(seg) || /^\d{2,4}$/.test(seg)) continue;
       kept.push(seg);
     }
     if (kept.length) lugar = kept.join(', ');
   }
-  if (!cultura && description && /maya/i.test(description)) cultura = 'Maya';
+  if (!cultura && description) {
+    if (/maya/i.test(description)) cultura = 'Maya';
+    else {
+      const km = description.match(/\b(Olmec|Aztec|Mexica|Inca|Chavin|Chavín|Valdivia|Moche|Nazca|Wari|Teotihuacan|Toltec|Zapotec|Mixtec|Chimu|Sican|Lambayeque|Conte)\b/i);
+      if (km) cultura = km[1];
+    }
+  }
   if (!lugar && description) {
     const matches = [...description.matchAll(/from\s+([^.]+?)(?:\.|$)/gi)];
     if (matches.length) lugar = matches[matches.length - 1][1].trim();
@@ -488,10 +514,144 @@ function parsePlaceAndCulture(placeRaw, description) {
   return { lugar, cultura };
 }
 
+
+/** Parsea la descripción estilo LACMA (líneas ":...") en campos sueltos. */
+function parseLacmaDescription(rawDescription) {
+  if (!rawDescription) return {};
+  const lines = rawDescription.split(/\n/).map(l => l.replace(/^\s*:\s*/, '').trim()).filter(Boolean);
+  if (lines.length < 2) return {};
+  const out = {};
+  // Patrón LACMA: [tipo, material, Height: ..., Gift..., link...]
+  if (lines[0] && !/height|gift/i.test(lines[0])) out.tipo_objeto = cleanWikiValue(lines[0]);
+  if (lines[1] && !/height|gift/i.test(lines[1])) out.material_tecnica = cleanWikiValue(lines[1]);
+  for (const line of lines) {
+    if (/^height\s*:/i.test(line)) out.dimensiones = cleanWikiValue(line.replace(/^height\s*:\s*/i, ''));
+    if (/^gift of/i.test(line)) out.creditos = cleanWikiValue(line);
+  }
+  return out;
+}
+
+/** Parsea descripción estilo Met "Cultura; Objeto; Material-Tipo". */
+function parseMetDescription(description) {
+  if (!description || !description.includes(';')) return {};
+  const parts = description.split(';').map(x => x.trim()).filter(Boolean);
+  if (parts.length < 2) return {};
+  const out = {};
+  if (!out.estilo_cultura) out.estilo_cultura = parts[0];
+  if (parts[1]) out.tipo_objeto = parts[1];
+  return out;
+}
+
+/** Extrae Culture/Object_Name del JSON oculto metadata_mapped_json (Met/GWToolset). */
+function parseMappedJsonCulture(wikitext) {
+  if (!wikitext) return {};
+  const m = wikitext.match(/<metadata_mapped_json>([\s\S]*?)<\/metadata_mapped_json>/i);
+  if (!m) return {};
+  try {
+    const json = JSON.parse(m[1].replace(/\\\//g, '/'));
+    const out = {};
+    if (json.Culture) out.estilo_cultura = String(json.Culture).trim();
+    if (json.Object_Name && !out.tipo_objeto) out.tipo_objeto = String(json.Object_Name).trim();
+    return out;
+  } catch { return {}; }
+}
+
+/** Extrae el bloque {{Information ... }} (LACMA/Flickr) respetando anidamiento. */
+function extractInformationBlock(wikitext) {
+  if (!wikitext) return null;
+  const start = wikitext.search(/\{\{\s*Information\b/i);
+  if (start < 0) return null;
+  let depth = 0;
+  for (let i = start; i < wikitext.length - 1; i++) {
+    if (wikitext[i] === '{' && wikitext[i + 1] === '{') { depth++; i++; }
+    else if (wikitext[i] === '}' && wikitext[i + 1] === '}') {
+      depth--; i++;
+      if (depth === 0) return wikitext.slice(start, i + 1);
+    }
+  }
+  return null;
+}
+
+function parseTemplateParamsGeneric(block, templateName) {
+  const re = new RegExp(`^\\{\\{\\s*${templateName}\\b`, 'i');
+  const inner = block.replace(re, '').replace(/\}\}\s*$/, '');
+  const params = {};
+  for (const part of splitTopLevel(inner, '|')) {
+    const eq = indexOfTopLevelEquals(part);
+    if (eq < 0) continue;
+    const key = part.slice(0, eq).trim().toLowerCase();
+    const value = part.slice(eq + 1).trim();
+    if (key) params[key] = value;
+  }
+  return params;
+}
+
+/** Parsea ficha {{Information}} (LACMA vía Flickr/WLA). */
+function parseInformation(wikitext) {
+  const block = extractInformationBlock(wikitext);
+  if (!block) return null;
+  const p = parseTemplateParamsGeneric(block, 'Information');
+  const get = (k) => (p[k] !== undefined && p[k] !== '' ? p[k] : null);
+  const rawDesc = get('description') || '';
+  const description = cleanWikiValue(rawDesc);
+  const out = {
+    titulo: null,
+    descripcion: description,
+    fecha: parseArtworkDate(get('date')),
+    material_tecnica: null,
+    dimensiones: null,
+    creditos: null,
+    autor: cleanWikiValue(get('author')),
+    numero_inventario: null,
+    url_objeto: null,
+    lugar_origen: null,
+    estilo_cultura: null,
+    tipo_objeto: null,
+  };
+  // Descripción multi-línea LACMA: "Mexico, probably Guerrero, Olmec\nBloodletter Handle, 1000-600BC\nJadeite\nGift...\nAC1993.217.1"
+  const descText = rawDesc.replace(/\{\{\s*en\s*\|[^}]*?\}\}/gi, (m) => {
+    const inner = m.replace(/^\{\{\s*en\s*\|/i, '').replace(/\}\}$/, '');
+    const eq = inner.indexOf('=');
+    return eq >= 0 ? inner.slice(eq + 1) : inner;
+  });
+  const lines = descText.split(/\n/).map(l => l.trim()).filter(Boolean);
+  for (const line of lines) {
+    const acc = line.match(/^(AC)?(\d{4}\.\d+(?:\.\d+)?)$/i);
+    if (acc && !out.numero_inventario) { out.numero_inventario = line.toUpperCase(); continue; }
+    if (/^accession\s*#/i.test(line)) continue;
+    if (/^location\s*:/i.test(line)) continue;
+    if (/^team\s*:/i.test(line)) continue;
+    if (/^gift of/i.test(line)) { out.creditos = cleanWikiValue(line); continue; }
+    if (/^\d{4}\s*[-–—]?\s*\d{0,4}\s*(bc|bce|ad|ce)?$/i.test(line) || /,\s*\d{3,4}\s*[-–—]?\s*\d{0,4}\s*(bc|bce)?$/i.test(line)) {
+      // línea "Título, fecha" o solo fecha
+      const parts = line.split(',');
+      if (parts.length > 1) {
+        out.titulo = cleanWikiValue(parts.slice(0, -1).join(','));
+        out.fecha = parseArtworkDate(parts[parts.length - 1]);
+      } else {
+        out.fecha = parseArtworkDate(line);
+      }
+      continue;
+    }
+    if (!out.lugar_origen && /,/.test(line) && /mexico|guerrero|olmec|maya|aztec|inca|peru|ecuador|guatemala|honduras|belize/i.test(line)) {
+      const { lugar, cultura } = parsePlaceAndCulture(line, description);
+      out.lugar_origen = lugar || line;
+      out.estilo_cultura = cultura;
+      continue;
+    }
+    if (!out.material_tecnica && /^[A-Z][a-z]+(?:ite|e|a)?$/.test(line) && line.length < 30) {
+      out.material_tecnica = cleanWikiValue(line);
+      continue;
+    }
+  }
+  if (!out.titulo) out.titulo = cleanWikiValue(get('title'));
+  return out;
+}
+
 /** Parsea la ficha {{Artwork}} de un wikitexto; null si no hay plantilla. */
 function parseArtwork(wikitext) {
   const block = extractArtworkBlock(wikitext);
-  if (!block) return null;
+  if (!block) return parseInformation(wikitext);
   const p = parseTemplateParams(block);
   const get = (k) => (p[k] !== undefined && p[k] !== '' ? p[k] : null);
 
@@ -506,26 +666,29 @@ function parseArtwork(wikitext) {
   const sourceRaw = get('source');
   const sourceUrl = (() => {
     if (!sourceRaw) return null;
-    const m = sourceRaw.match(/https?:\/\/[^\s\]]+/);
+    const m = sourceRaw.match(/https?:\/\/[^\s\]}{]+/);
     return m ? m[0] : null;
   })();
   const sourceName = sourceUrl ? null : cleanWikiValue(sourceRaw);
   const author = cleanWikiValue(get('artist') || get('author'));
   const { lugar, cultura } = parsePlaceAndCulture(get('place of creation'), description);
+  const lacma = parseLacmaDescription(get('description'));
+  const met = parseMetDescription(description);
+  const mapped = parseMappedJsonCulture(wikitext);
 
   return {
     titulo: title || null,
     descripcion: description || null,
     fecha: date,
-    material_tecnica: medium,
-    dimensiones: dimensions,
-    creditos: creditLine || institution || sourceName || null,
+    material_tecnica: medium || lacma.material_tecnica || null,
+    dimensiones: dimensions || lacma.dimensiones || null,
+    creditos: creditLine || lacma.creditos || institution || sourceName || null,
     autor: author,
-    numero_inventario: accession && /^\d{4}\.\d+(?:\.\d+)?$/.test(accession) ? accession : (accession || null),
-    url_objeto: sourceUrl,
+    numero_inventario: accession && /^(AC)?\d{4}\.\d+(?:\.\d+)?$/i.test(accession) ? accession.toUpperCase() : (accession || null),
+    url_objeto: sourceUrl && !/collections\.lacma\.org\/sites\/default\/files\/remote_images/i.test(sourceUrl) ? sourceUrl : null,
     lugar_origen: lugar,
-    estilo_cultura: cultura,
-    tipo_objeto: cleanWikiValue(get('department')) || null,
+    estilo_cultura: cultura || met.estilo_cultura || mapped.estilo_cultura || null,
+    tipo_objeto: lacma.tipo_objeto || met.tipo_objeto || mapped.tipo_objeto || null,
   };
 }
 
@@ -552,7 +715,7 @@ function enrichWithCommonsArtwork(items) {
     fill('url_objeto', art.url_objeto);
     fill('lugar_origen', art.lugar_origen, 'lugar_origen_source');
     fill('estilo_cultura', art.estilo_cultura, 'estilo_cultura_source');
-    // tipo_objeto solo si viene de Wikidata; el department no es tipo de objeto útil
+    fill('tipo_objeto', art.tipo_objeto);
     return merged;
   });
 }
@@ -617,6 +780,9 @@ function accessionScore(item) {
   if (/\.jpg$/i.test(t)) score += 10;
   if (/\.tif{1,2}$/i.test(t)) score -= 10;
   if (/Cleveland Museum of Art/i.test(t)) score -= 2;
+  // Vistas múltiples (Met "VS1994 389 3/4"): preferir la vista con número menor
+  const viewMatch = t.match(/\bVS\d{4}[\s_]+\d+[\s_]+(\d+)\b/i) || t.match(/\s(\d{1,2})\.(?:jpg|jpeg|png|tif)$/i);
+  if (viewMatch) score -= parseInt(viewMatch[1], 10);
   return score;
 }
 
@@ -637,7 +803,7 @@ function deduplicateByAccession(items) {
   const groups = new Map();
   const kept = [];
   for (const item of candidates) {
-    const acc = extractAccession(item.title);
+    const acc = item.numero_inventario || extractAccession(item.title);
     if (!acc) { kept.push(item); continue; }
     if (!groups.has(acc)) groups.set(acc, []);
     groups.get(acc).push(item);
