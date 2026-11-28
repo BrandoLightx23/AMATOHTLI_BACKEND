@@ -474,6 +474,7 @@ function parseArtworkDate(raw) {
   const m = cleaned.match(/(\d{1,4})/);
   if (!m) return cleaned;
   const year = parseInt(m[1], 10);
+  if (year < 10) return null; // fecha truncada en la ficha (p. ej. "1"), mejor desconocida
   const isBC = /b\.?\s*c\.?|bce/i.test(cleaned);
   const era = isBC ? 'a. C.' : 'd. C.';
   const circa = /circa|ca\.?|c\./i.test(cleaned) ? 'circa ' : '';
