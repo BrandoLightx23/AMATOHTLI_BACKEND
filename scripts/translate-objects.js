@@ -365,6 +365,7 @@ async function saveJobs(jobs, targetLanguage) {
           proveedor = EXCLUDED.proveedor,
           estado = 'automatica',
           actualizado_en = now()
+          WHERE coleccion_traducciones.estado <> 'revisada'
         `, [
           job.id,
           targetLanguage,
@@ -383,6 +384,7 @@ async function saveJobs(jobs, targetLanguage) {
             proveedor = EXCLUDED.proveedor,
             estado = 'automatica',
             actualizado_en = now()
+            WHERE objeto_traducciones.estado <> 'revisada'
         `, [
           job.id,
           targetLanguage,
@@ -477,3 +479,4 @@ module.exports = {
   run,
   translateTexts,
 };
+
